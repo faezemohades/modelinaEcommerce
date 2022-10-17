@@ -1,13 +1,14 @@
- import React from 'react'
-import Layout from '../../Layout'
-import Carousel from '../../Carousel/index'
+import React from "react";
+import Layout from "../../Layout";
+import Carousel from "../../Carousel/index";
+import Modelina from "./Modelina";
 function Home() {
   return (
     <Layout>
- <Carousel/>
-
-     </Layout>
-  )
+      <Carousel />
+      <Modelina/>
+    </Layout>
+  );
 }
 
-export default Home
+export default Home;
