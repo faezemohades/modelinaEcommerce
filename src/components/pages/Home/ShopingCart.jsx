@@ -109,21 +109,21 @@ function ShopingCart() {
       <Box flex={4} sx={{ width: "100vw" }}>
         <Box className={classes.table}>
           <Box className={classes.trTitle}>
-            <Box class="col">
+            <Box  >
               <Typography variant="h6">محصول</Typography>
             </Box>
-            <Box class="col">
+            <Box  >
               <Typography variant="h6">قیمت</Typography>
             </Box>
-            <Box class="col">
+            <Box  >
               <Typography variant="h6">تعداد</Typography>
             </Box>
-            <Box class="col">
+            <Box  >
               <Typography variant="h6">قیمت کل</Typography>
             </Box>
           </Box>
           <Box className={classes.tr}>
-            <Box class="col">
+            <Box  >
               <Box className={classes.imgContainer}>
                 <img
                   width="90%"
@@ -132,12 +132,12 @@ function ShopingCart() {
                 />
               </Box>
             </Box>
-            <Box class="col">
+            <Box  >
               <Box component="span" className={classes.name}>
                 شال نخی
               </Box>
             </Box>
-            <Box class="col">
+            <Box  >
               <Box component="span">
                 <Box display="flex" marginLeft="20px" width="30px">
                   <Box className={classes.count}>
@@ -158,7 +158,7 @@ function ShopingCart() {
                 </Box>
               </Box>
             </Box>
-            <Box class="col">
+            <Box  >
               <Box component="span" className={classes.name}>
                 190 تومان
               </Box>

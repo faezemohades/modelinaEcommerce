@@ -188,24 +188,24 @@ import {
         <Box flex={4} sx={{ width: "90vw" }}>
           <Box className={classes.table}>
             <Box className={classes.trTitle}>
-              <Box class="col">
+              <Box  >
                 <Typography variant="h6">تصویر</Typography>
               </Box>
-              <Box class="col">
+              <Box  >
                 {" "}
                 <Typography variant="h6">نام کالا</Typography>
               </Box>
-              <Box class="col">
+              <Box  >
                 {" "}
                 <Typography variant="h6">دسته بندی</Typography>
               </Box>
-              <Box class="col">
+              <Box >
                 {" "}
                 <Typography variant="h6"> عملیات </Typography>
               </Box>
             </Box>
             <Box className={classes.tr}>
-              <Box class="col">
+              <Box  >
                 <Box className={classes.imgContainer}>
                   <img
                     width="90%"
@@ -214,17 +214,17 @@ import {
                   />
                 </Box>
               </Box>
-              <Box class="col">
+              <Box  >
                 <Box component="span" className={classes.name}>
                   شال نخی
                 </Box>
               </Box>
-              <Box class="col">
+              <Box  >
                 <Box component="span" className={classes.name}>
                   شال
                 </Box>
               </Box>
-              <Box class="col">
+              <Box  >
                 <Box component="span" className={classes.name}>
                   <Button>ویرایش</Button>
                   <Button>حذف</Button>

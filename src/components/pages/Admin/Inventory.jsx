@@ -77,21 +77,21 @@ function Inventory() {
     <Box flex={4} sx={{ width: "90vw" }}>
       <Box className={classes.table}>
         <Box className={classes.trTitle}>
-          <Box class="col">
+          <Box  >
             <Typography variant="h6">کالا</Typography>
           </Box>
-          <Box class="col">
+          <Box  >
             {" "}
             <Typography variant="h6"> قیمت  </Typography>
           </Box>
-          <Box class="col">
+          <Box >
             {" "}
             <Typography variant="h6"> موجودی  </Typography>
           </Box>
           
         </Box>
         <Box className={classes.tr}>
-          <Box class="col">
+          <Box  >
             <Box className={classes.imgContainer}>
               <img
                 width="90%"
@@ -100,12 +100,12 @@ function Inventory() {
               />
             </Box>
           </Box>
-          <Box class="col">
+          <Box  >
             <Box component="span" className={classes.name}>
              200.000
             </Box>
           </Box>
-          <Box class="col">
+          <Box  >
             <Box component="span" className={classes.name}>
               100
             </Box>

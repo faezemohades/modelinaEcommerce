@@ -223,39 +223,39 @@ import {
        <Box flex={4} sx={{ width: "90vw" }}>
          <Box className={classes.table}>
            <Box className={classes.trTitle}>
-             <Box class="col">
+             <Box  >
                <Typography variant="h6">نام کاربر </Typography>
              </Box>
-             <Box class="col">
+             <Box  >
                {" "}
                <Typography variant="h6"> مجموع مبلغ </Typography>
              </Box>
-             <Box class="col">
+             <Box  >
                {" "}
                <Typography variant="h6"> زمان ثبت سفارش </Typography>
              </Box>
-             <Box class="col">
+             <Box  >
                {" "}
                <Typography variant="h6">عملیات </Typography>
              </Box>
            </Box>
            <Box className={classes.tr}>
-             <Box class="col">
+             <Box  >
                <Box component="span" className={classes.name}>
                  فایزه
                </Box>
              </Box>
-             <Box class="col">
+             <Box  >
                <Box component="span" className={classes.name}>
                  5000000
                </Box>
              </Box>
-             <Box class="col">
+             <Box  >
                <Box component="span" className={classes.name}>
                  21/11/1398{" "}
                </Box>
              </Box>
-             <Box class="col">
+             <Box  >
                <Box component="span" className={classes.name}>
                  <Button onClick={() => setOpen(true)}>بررسی سفارش</Button>
                </Box>
