@@ -7,6 +7,7 @@ import Produce from "./components/pages/Admin/Produce";
 import Home from "./components/pages/Home";
 import Aboutus from "./components/pages/Home/Aboutus";
 import Contactus from "./components/pages/Home/Contactus";
+import FinalCart from "./components/pages/Home/FinalCart";
 import Login from "./components/pages/Home/Login";
 import ShopingCart from "./components/pages/Home/ShopingCart";
 
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/admin/inventory" element={<Inventory />} />
             <Route exact path="/admin/orders" element={<Orders />} />
             <Route exact path="/shop" element={<ShopingCart />} />
+            <Route exact path="/finalcart" element={<FinalCart />} />
           </Routes>
         </Layout>
       </BrowserRouter>
