@@ -8,6 +8,7 @@ import Home from "./components/pages/Home";
 import Aboutus from "./components/pages/Home/Aboutus";
 import Contactus from "./components/pages/Home/Contactus";
 import Login from "./components/pages/Home/Login";
+import ShopingCart from "./components/pages/Home/ShopingCart";
 
 function App() {
   return (
@@ -19,11 +20,12 @@ function App() {
             <Route exact path="/about" element={<Aboutus />} />
             <Route exact path="/contact" element={<Contactus />} />
             <Route exact path="/login" element={<Login />} />
+
             <Route exact path="/admin" element={<Admin />} />
             <Route exact path="/admin/produce" element={<Produce />} />
             <Route exact path="/admin/inventory" element={<Inventory />} />
             <Route exact path="/admin/orders" element={<Orders />} />
-
+            <Route exact path="/shop" element={<ShopingCart />} />
           </Routes>
         </Layout>
       </BrowserRouter>
