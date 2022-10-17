@@ -74,7 +74,7 @@ function Modelina() {
         <Box  sx={{ display: { xs: 'none', sm: 'none', md: 'none' ,lg: 'flex' ,justifyContent:"center"} }} >
         <Box sx={{ width: "45%" }} className={classes.animatedItemExiting}>
           <Box paddingBottom="20px" display="flex" justifyContent='center'>
-            <img src={mod} />
+            <img src={mod} alt="" />
           </Box>
 
        
