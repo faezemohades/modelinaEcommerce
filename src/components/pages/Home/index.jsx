@@ -1,14 +1,14 @@
 import React from "react";
  import Carousel from "../../Carousel/index";
+import ProductItems from "../../Products/ProductItems";
 import Featured from "./Featured";
 import Modelina from "./Modelina";
-import Products from "./Products";
-function Home() {
+ function Home() {
   return (
     <>
       <Carousel />
       <Modelina/>
-      <Products/>
+      <ProductItems/>
       <Featured/>
     </>
   );

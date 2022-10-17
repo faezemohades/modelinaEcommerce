@@ -89,7 +89,7 @@ function Header() {
             {/* menu */}
             <Grid item xs={5} display="flex" alignItems="center">
               <Tabs>
-                <Link to="/products" className={classes.link}>
+                <Link to="/productI" className={classes.link}>
                   <Tab label="محصولات" />
                 </Link>
                 <Link to="/" className={classes.link}>

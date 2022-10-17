@@ -10,6 +10,9 @@ import Contactus from "./components/pages/Home/Contactus";
 import FinalCart from "./components/pages/Home/FinalCart";
 import Login from "./components/pages/Home/Login";
 import ShopingCart from "./components/pages/Home/ShopingCart";
+import ProductDetail from "./components/Products/ProductDetail";
+import ProductItems from "./components/Products/ProductItems";
+import ProductList from "./components/Products/ProductList";
 
 function App() {
   return (
@@ -28,6 +31,10 @@ function App() {
             <Route exact path="/admin/orders" element={<Orders />} />
             <Route exact path="/shop" element={<ShopingCart />} />
             <Route exact path="/finalcart" element={<FinalCart />} />
+            <Route exact path="/productd" element={<ProductDetail />} />
+            <Route exact path="/productl" element={<ProductList />} />
+            <Route exact path="/productI" element={<ProductItems />} />
+
           </Routes>
         </Layout>
       </BrowserRouter>
