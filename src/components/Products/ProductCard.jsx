@@ -10,6 +10,7 @@ import data from "../../data/db.json";
 import { Box } from "@mui/system";
 
 function ProductCard( ) {
+  
   return (
     <Box>
       {data.products.map((item,index) =>(<Card sx={{ maxWidth: 345 }}  key={index}>

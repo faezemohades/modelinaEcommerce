@@ -13,19 +13,13 @@ import { styled } from "@mui/material/styles";
 function ProductList() {
   return (
     <Container sx={{ height: "auto", marginTop: "150px" }}>
-      <Box
-        sx={{
-          width: "100vw",
-           display:"flex",
-           justifyContent: "space-between",
-        }}
-      >
+     
         <Grid
           item
           container
           rowSpacing={1}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          sx={{ alignItems: "center", justifyContent: "center" }}
+          sx={{ alignItems: "space-between", justifyContent: "space-between" }}
         >
           <Grid item sm={6} md={4} lg={3}>
              <Item >
@@ -33,7 +27,6 @@ function ProductList() {
             </Item>
            </Grid>
         </Grid>
-      </Box>
     </Container>
   );
 }

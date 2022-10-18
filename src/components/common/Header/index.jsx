@@ -19,6 +19,7 @@ import DrawerComp from "./DrawerComp";
 import SearchBar from "./SearchBar";
 import {makeStyles} from "@mui/styles";
 import { useState } from 'react';
+import {useSelector} from 'react-redux'
 const useStyles = makeStyles((theme) => ({
     link: {
         textDecoration: "none",
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 function Header() {
+  const totalQuantity=useSelector(state=>state.cart.totalQuantity)
   const classes = useStyles();
   const [value, setValue] = useState(false);
   const handleChange = (event, newValue) => {
@@ -128,8 +130,9 @@ function Header() {
                     <LoginIcon cursor="pointer" />
                   </Link>
                 </Box>
-                <Badge badgeContent={4} color="primary">
+                <Badge color="primary">
                   <Link to="/shop" className={classes.link}>
+                    {totalQuantity}
                     <RedeemIcon cursor="pointer" />
                   </Link>
                 </Badge>
