@@ -2,8 +2,7 @@ import { Box, Container, Grid, Paper } from "@mui/material";
 import React from "react";
 import ProductCard from "./ProductCard";
 import { styled } from "@mui/material/styles";
-import data from "../../data/db.json";
-const Item = styled(Paper)(({ theme }) => ({
+ const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: "30px",
@@ -13,7 +12,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function ProductList() {
   return (
-    <Box sx={{ height: "auto", marginTop: "150px" }}>
+    <Container sx={{ height: "auto", marginTop: "150px" }}>
       <Box
         sx={{
           width: "100vw",
@@ -29,15 +28,13 @@ function ProductList() {
           sx={{ alignItems: "center", justifyContent: "center" }}
         >
           <Grid item sm={6} md={4} lg={3}>
-              {data.products.map((item) => (
-            <Item  key={item.id}>
-                <ProductCard item={item}/>
+             <Item >
+                <ProductCard  />
             </Item>
-              ))}
-          </Grid>
+           </Grid>
         </Grid>
       </Box>
-    </Box>
+    </Container>
   );
 }
 

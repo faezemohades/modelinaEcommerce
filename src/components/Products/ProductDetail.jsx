@@ -4,6 +4,8 @@ import { makeStyles } from "@mui/styles";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useNavigate } from "react-router-dom";
+import data from '../../data/db.json'
+import {useParams} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -19,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProductDetail() {
+
+  const {productId} = useParams()
+  const thisProduct = data.products.find(prod => prod.id === productId)
+
   const classes = useStyles();
   let navigate = useNavigate();
   const routeChange = () => {
@@ -43,7 +49,7 @@ function ProductDetail() {
         <Box padding="20px" marginTop="50px">
           <Box className={classes.title}>
             <Typography variant="h5">
-              شال موهراعلا(وارداتی)مدلینا1472
+           {data.name}
             </Typography>
           </Box>
           <Box className={classes.title}>

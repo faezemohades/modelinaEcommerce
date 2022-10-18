@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/admin/orders" element={<Orders />} />
             <Route exact path="/shop" element={<ShopingCart />} />
             <Route exact path="/finalcart" element={<FinalCart />} />
-            <Route exact path="/productd" element={<ProductDetail />} />
+            <Route exact path="/productd/:productId" element={<ProductDetail />} />
             <Route exact path="/productl" element={<ProductList />} />
             <Route exact path="/productI" element={<ProductItems />} />
 
