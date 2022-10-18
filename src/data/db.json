@@ -1,0 +1,235 @@
+{
+    "products": [
+      {
+        "  id":1,
+        "  name":"  شال موهرپاییزه باربری  ",
+         " cover":"https://modelinaco.com/wp-content/uploads/2022/10/1499-2.jpg",
+         " price":"276,000 تومان ",
+          "size":" 70*195  ",
+         " material":" نخ"
+       },
+      {
+          "  id":2,
+          "  name":"شال نخ پاییزه دیور",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/10/1485-2.jpg",
+           " price":"336.000 تومان",
+            "size":"70*190",
+           " material":" نخ"
+         },
+        {
+          "  id":3,
+          "  name":"شال نخ پاییزه شاین",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/10/1496-3.jpg",
+           " price":"336.000 تومان",
+            "size":"70*190",
+           " material":" موهر  "
+        },
+        {
+          "  id":4,
+          "  name":" شال نخ پاییزه  ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/10/4x-1.jpg",
+           " price":"236.000 تومان",
+            "size":"70*190",
+           " material":"   نخ"
+        },
+        {
+          "  id":5,
+          "  name":"  شال  پاییزه ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/10/1x-4.jpg",
+           " price":"336.000 تومان",
+            "size":"70*190",
+           " material":"  وول "
+        },
+        {
+          "  id":6,
+          "  name":"شال نخ پاییزه ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/10/1z.jpg",
+           " price":"196.000 تومان",
+            "size":"70*190",
+           " material":" نخ"
+        },
+        {
+          "  id":7,
+          "  name":"شال وول پاییزه (وارداتی)",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1432-3.jpg",
+           " price":"236.000 تومان",
+            "size":"70*190",
+           " material":" وول "
+        },
+        {
+          "  id":8,
+          "  name":"شال نخ پاییزه",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/10/1465-3.jpg",
+           " price":"196.000 تومان",
+            "size":"70*190",
+           " material":"نخ"
+        },
+        {
+          "  id":9,
+          "  name":"شال پلیسه پاییزه سنگشور",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1413-7.jpg",
+           " price":"190.000 تومان",
+            "size":"70*2",
+           " material":"نخ"
+        },
+        {
+          "  id":10,
+          "  name":"شال موهر اعلا(وارداتی)",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1429-4.jpg",
+           " price":"316.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":11,
+          "  name":"شال موهراعلا (وارداتی)",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1427-3.jpg",
+           " price":"316.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":12,
+          "  name":" شال موهراعلا",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1425-3.jpg",
+           " price":"316.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":13,
+          "  name":"شال موهر اعلا (وارداتی)",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1424-3.jpg",
+           " price":"376.000 تومان",
+            "size":"70*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":14,
+          "  name":"شال موهر اعلا (وارداتی) ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1423-3.jpg",
+           " price":"376.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":15,
+          "  name":"شال پاییزه سنگشور",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1418_0000s_0003_Group-1-copy-4.jpg",
+           " price":"296.000 تومان",
+            "size":"80*2",
+           " material":"کشمیر"
+        },
+        {
+          "  id":16,
+          "  name":"شال موهر اعلا",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1419-7.jpg",
+           " price":"316.000 تومان",
+            "size":"70*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":17,
+          "  name":" شال موهر اعلا(وارداتی)",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1456-5.jpg",
+           " price":"316.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":18,
+          "  name":" شال موهرپیچازی",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1452-7.jpg",
+           " price":"316.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        },
+        {
+          "  id":19,
+          "  name":" شال موهر وارداتی",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1479-3.jpg",
+           " price":"316.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        },  {
+          "  id":20,
+          "  name":" شال نخی پاییزه",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1448-3.jpg",
+           " price":"256.000 تومان",
+            "size":"190*70",
+           " material":" نخ"
+        },  {
+          "  id":21,
+          "  name":"شال نخ کنفی پاییزه",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1438-2.jpg",
+           " price":"276.000 تومان",
+            "size":"80*2",
+           " material":" نخ"
+        },  {
+          "  id":22,
+          "  name":"شال نخ پاییزه",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1434-4.jpg",
+           " price":"256.000 تومان",
+            "size":" 190*70 ",
+           " material":" نخ"
+        },  {
+          "  id":23,
+          "  name":"  شال ابریشم مجلسی ترک",
+           " cover":"https://modelinaco.com/wp-content/uploads/2021/12/1230-6-600x750.jpg",
+           " price":"376.000 تومان",
+            "size":" 190*70",
+           " material":" ابریشم  "
+        },  {
+          "  id":24,
+          "  name":" شال پلیسه بهاره  ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/02/1253-7-600x750.jpg",
+           " price":"177.000 تومان",
+            "size":"80*2",
+           " material":" نخ  "
+        },  {
+          "  id":25,
+          "  name":"  شال اسلپ مزونی ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/08/1401-2-1-600x750.jpg",
+           " price":"276.000 تومان",
+            "size":"80*2",
+           " material":" نخ  "
+        },  {
+          "  id":26,
+          "  name":"  شال نخی تابستانه",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/08/1399-4-600x750.jpg",
+           " price":"156.000 تومان",
+            "size":" 190*70",
+           " material":" نخ  "
+        },  {
+          "  id":27,
+          "  name":"  شال مشکی مزونی   ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/08/1412-9-600x750.jpg",
+           " price":"236.000 تومان",
+            "size":"190*70",
+           " material":" نخ  "
+        },  {
+          "  id":28,
+          "  name":"  شال مزونی تک طرح  ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/07/1404-1-600x750.jpg",
+           " price":"196.000 تومان",
+            "size":"190*70",
+           " material":" نخ  "
+        } , {
+          "  id":29,
+          "  name":"  شال نخی فندی مدلینا  ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/07/1409-5-600x750.jpg",
+           " price":"156.000 تومان",
+            "size":"190*70",
+           " material":" نخ  "
+        },
+        {
+          "  id":30,
+          "  name":"  شال نخ ابریشم  ",
+           " cover":"https://modelinaco.com/wp-content/uploads/2022/09/1452-7.jpg",
+           " price":"316.000 تومان",
+            "size":"80*2",
+           " material":" موهر  "
+        }
+                                
+  ]
+  }

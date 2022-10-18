@@ -22,11 +22,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SubmitForm() {
-    const classes = useStyles();
-    const [textValue, setTextValue] = useState({ name: "", email: "", decs: "" });
-    const handleResetValue = () => {
-      setTextValue({ name: "", email: "", decs: "" });
-    };
+  const classes = useStyles();
+  const [textValue, setTextValue] = useState({ name: "", email: "", decs: "" });
+  const handleResetValue = () => {
+    setTextValue({ name: "", email: "", decs: "" });
+  };
   return (
     <Box className={classes.container}>
       <Box>
@@ -35,7 +35,7 @@ function SubmitForm() {
         </Box>
         <Box>
           <Typography variant="h6" paddingY={3} textAlign="center">
-             شما می توانید انتقادات و پیشنهادات خود را از طریق فرم زیر با ما در
+            شما می توانید انتقادات و پیشنهادات خود را از طریق فرم زیر با ما در
             میان بگذارید
           </Typography>
         </Box>
@@ -71,7 +71,7 @@ function SubmitForm() {
               variant="filled"
             />
             <TextField
-            required
+              required
               placeholder="آدرس ایمیل"
               type="email"
               value={textValue.email}
@@ -93,9 +93,9 @@ function SubmitForm() {
             }}
           >
             <TextField
-            required
+              sx={{ width: "100%" }}
+              required
               placeholder=" توضیحات "
-              fullWidth
               type="text"
               value={textValue.decs}
               onChange={(e) =>
@@ -122,7 +122,7 @@ function SubmitForm() {
         </Box>
       </Box>
     </Box>
-  )
+  );
 }
 
-export default SubmitForm
+export default SubmitForm;

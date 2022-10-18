@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Paper } from "@mui/material";
 import React from "react";
 import ProductCard from "./ProductCard";
-import { styled } from "@mui/material/styles";
+ import { styled } from "@mui/material/styles";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -23,17 +23,19 @@ function ProductList() {
         }}
       >
         <Grid
+        item
           container
           rowSpacing={1}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           sx={{ alignItems: "center", justifyContent: "center" }}
         >
         
-          <Grid xs={12} sm={6} md={4} lg={3}>
-            <Item>
-              <ProductCard>1</ProductCard>
-            </Item>
-          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+          
+             <Item  >
+              <ProductCard    />  
+            </Item> 
+                      </Grid>
          
         </Grid>
       </Box>

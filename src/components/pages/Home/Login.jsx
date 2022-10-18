@@ -89,10 +89,11 @@ import {
                         <Field
                           as={TextField}
                           error={handler.errors.email}
-                          sx={{ paddingTop: "10px" }}
+                          sx={{ paddingTop: "10px",width:"100%" }}
                           type="email"
                           helperText=" ایمیل خود را وارد کنید"
-                          fullWidth
+                          
+
                           placeholder="آدرس ایمیل"
                           variant="outlined"
                           required
@@ -106,10 +107,10 @@ import {
                         <Field
                           as={TextField}
                           error={handler.errors.pass}
-                          sx={{ paddingTop: "10px" }}
+                          sx={{ paddingTop: "10px" ,width:"100%"}}
                           type={showPass ? "text" : "password"}
                           helperText=" رمز خود را وارد کنید"
-                          fullWidth
+ 
                           placeholder="رمز ورود"
                           variant="outlined"
                           required
@@ -140,7 +141,8 @@ import {
                         <Button
                           variant="contained"
                           type="submit"
-                          fullWidth
+                          sx={{width:"100%"}}
+
                           onClick={handler.handleSubmit}
                         >
                           ورود

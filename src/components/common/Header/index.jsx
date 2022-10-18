@@ -18,6 +18,7 @@ import logo from "../../../assets/logooo.png";
 import DrawerComp from "./DrawerComp";
 import SearchBar from "./SearchBar";
 import {makeStyles} from "@mui/styles";
+import { useState } from 'react';
 const useStyles = makeStyles((theme) => ({
     link: {
         textDecoration: "none",
@@ -26,7 +27,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Header() {
   const classes = useStyles();
-
+  const [value, setValue] = useState(false);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
     return (
@@ -88,7 +92,7 @@ function Header() {
 
             {/* menu */}
             <Grid item xs={5} display="flex" alignItems="center">
-              <Tabs>
+              <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                 <Link to="/productI" className={classes.link}>
                   <Tab label="محصولات" />
                 </Link>
