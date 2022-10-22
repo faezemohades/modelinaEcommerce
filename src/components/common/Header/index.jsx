@@ -68,8 +68,9 @@ function Header() {
                   <LoginIcon cursor="pointer" />
                 </Link>
               </Box>
-              <Badge badgeContent={4} color="primary">
+              <Badge  color="primary">
                 <Link to="/shop" className={classes.link}>
+                {totalQuantity}
                    <RedeemIcon cursor="pointer" />
                 </Link>
               </Badge>

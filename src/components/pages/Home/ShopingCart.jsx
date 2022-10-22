@@ -4,8 +4,10 @@ import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { makeStyles } from "@mui/styles";
+import { useDispatch, useSelector } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
+import { cartActions } from "../../../feature/cartSlice";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -87,17 +89,30 @@ const useStyles = makeStyles((theme) => ({
 function ShopingCart() {
   const classes = useStyles();
   const [dis, setDis] = useState("");
+  const dispatch = useDispatch();
+  const cartProducts = useSelector((state) => state.cart.cartItems);
+  
 
-  let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = "/finalcart"; 
-    navigate(path);
+  const incrementItem=()=>{
+    dispatch(cartActions.addItem({
+     
+    }))
   }
+
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = "/finalcart";
+    navigate(path);
+  };
+
+
   const submitHandler = (event) => {
     event.preventDefault();
-    if (dis === "") return  
+    if (dis === "") return;
     setDis("");
   };
+
+
   return (
     <Box
       className={classes.container}
@@ -109,61 +124,65 @@ function ShopingCart() {
       <Box flex={4} sx={{ width: "100vw" }}>
         <Box className={classes.table}>
           <Box className={classes.trTitle}>
-            <Box  >
+            <Box>
               <Typography variant="h6">محصول</Typography>
             </Box>
-            <Box  >
+            <Box>
               <Typography variant="h6">قیمت</Typography>
             </Box>
-            <Box  >
+            <Box>
               <Typography variant="h6">تعداد</Typography>
             </Box>
-            <Box  >
+            <Box>
               <Typography variant="h6">قیمت کل</Typography>
             </Box>
           </Box>
-          <Box className={classes.tr}>
-            <Box  >
-              <Box className={classes.imgContainer}>
-                <img
-                  width="90%"
-                  src="https://limooshop.com/13575-large_default/%D8%B4%D8%A7%D9%84-%D9%85%D8%AC%D9%84%D8%B3%DB%8C-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%A7%D8%B1-2446.jpg"
-                  alt=""
-                />
+
+
+          {cartProducts.map((item, index) => (
+            <Box className={classes.tr} key={index}>
+              <Box>
+                <Box className={classes.imgContainer}>
+                  <img
+                    width="90%"
+                    src={item.cover}
+                    alt=""
+                  />
+                </Box>
               </Box>
-            </Box>
-            <Box  >
-              <Box component="span" className={classes.name}>
-                شال نخی
+              <Box>
+                <Box component="span" className={classes.name}>
+                  {item.price}
+                </Box>
               </Box>
-            </Box>
-            <Box  >
-              <Box component="span">
-                <Box display="flex" marginLeft="20px" width="30px">
-                  <Box className={classes.count}>
-                    <AddIcon />
-                  </Box>
-                  <Box
-                    sx={{
-                      border: "1px solid grey",
-                      width: "20px",
-                    }}
-                    component="div"
-                  >
-                    <Typography padding="5px">5</Typography>
-                  </Box>
-                  <Box className={classes.count}>
-                    <RemoveIcon />
+              <Box>
+                <Box component="span">
+                  <Box display="flex" marginLeft="20px" width="30px">
+                    <Box className={classes.count}>
+                      <AddIcon />
+                    </Box>
+                    <Box
+                      sx={{
+                        border: "1px solid grey",
+                        width: "20px",
+                      }}
+                      component="div"
+                    >
+                      <Typography padding="5px">{item.quantity}</Typography>
+                    </Box>
+                    <Box className={classes.count}>
+                      <RemoveIcon />
+                    </Box>
                   </Box>
                 </Box>
               </Box>
-            </Box>
-            <Box  >
-              <Box component="span" className={classes.name}>
-                190 تومان
+              <Box>
+                <Box component="span" className={classes.name}>
+                 {item.totalPrice}
+                </Box>
               </Box>
             </Box>
-          </Box>
+          ))}
         </Box>
 
         {/* discount section */}
@@ -181,7 +200,7 @@ function ShopingCart() {
             }}
           >
             <InputBase
-            required
+              required
               value={dis}
               onChange={(e) => setDis(e.target.value)}
               placeholder="کد تخفیف :"
