@@ -23,11 +23,11 @@ function ProductList() {
         sx={{ alignItems: "space-between", justifyContent: "space-between" }}
       >
         <Grid item sm={6} md={4} lg={3}>
+          <Item>
           {data.products.map((item, index) => (
-            <Item key={index}>
-              <ProductCard item={item}/>
-            </Item>
-          ))}
+              <ProductCard item={item}  key={index}/>
+              ))}
+              </Item>
         </Grid>
       </Grid>
     </Container>

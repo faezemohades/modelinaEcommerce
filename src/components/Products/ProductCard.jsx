@@ -9,27 +9,41 @@ import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../feature/cartSlice";
-function ProductCard(props) {
-  const{id,name,cover,price,size,material}=props.item
-  const dispatch=useDispatch()
 
-  const addToCart=()=>{
-    dispatch(cartActions.addItem({
-      id,cover,price,
-    }))
-  }
+import { toast } from 'react-toastify';
+
+function ProductCard(props) {
+  const { id, name, cover, price, size, material } = props.item;
+
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        cover,
+        price,
+      })
+    );
+    toast.success("محصول به سبد خرید شما اضافه شد")
+  };
   return (
     <Box>
-     <Card sx={{ maxWidth: 345 }}  key={id}>
+      <Card sx={{ maxWidth: 345 }} key={id}>
         <CardActionArea>
           <CardMedia component="img" height="140" image={cover} alt="cover " />
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
-            <Link to={`/productd/${id}`} style={{ textDecoration: "none", color: "grey" }}>{name}</Link>
+              <Link
+                to={`/productd/${id}`}
+                style={{ textDecoration: "none", color: "grey" }}
+              >
+                {name}
+              </Link>
             </Typography>
             <Typography variant="body2" color="text.secondary">
-  
-              </Typography>
+            {`${price} تومان`}
+            </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -38,8 +52,8 @@ function ProductCard(props) {
           </Button>
         </CardActions>
       </Card>
-      
-      </Box>  );
+    </Box>
+  );
 }
 
 export default ProductCard;

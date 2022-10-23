@@ -1,25 +1,17 @@
 import React from "react";
 import { Box, Button, InputBase, Typography } from "@mui/material";
 import { useState } from "react";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
 import { makeStyles } from "@mui/styles";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
-import { cartActions } from "../../../feature/cartSlice";
+import CartItem from "./CartItem";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "80px",
     padding: "50px",
     display: "flex",
-  },
-
-  imgContainer: {
-    width: "100px",
-    height: " 100px",
-    position: "relative",
   },
 
   table: {
@@ -34,20 +26,6 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "2px solid #E2E2E2",
     margin: "5px",
     paddingBottom: "20px",
-  },
-
-  tr: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    marginTop: "20px",
-    borderBottom: "2px solid #E2E2E2",
-    paddingBottom: "20px",
-    minWidth: "60%",
-  },
-  name: {
-    fontWeight: "500",
-    fontSize: "18px",
   },
 
   total: {
@@ -78,12 +56,6 @@ const useStyles = makeStyles((theme) => ({
     width: "60%",
     margin: "auto",
   },
-  count: {
-    border: "1px solid grey",
-    width: "20px",
-    padding: "2px 5px",
-    cursor: "pointer",
-  },
 }));
 
 function ShopingCart() {
@@ -91,27 +63,18 @@ function ShopingCart() {
   const [dis, setDis] = useState("");
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cartItems);
-  
-
-  const incrementItem=()=>{
-    dispatch(cartActions.addItem({
-     
-    }))
-  }
-
+const totalAmount=useSelector(state=>state.cart.totalAmount)
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/finalcart";
     navigate(path);
   };
 
-
   const submitHandler = (event) => {
     event.preventDefault();
     if (dis === "") return;
     setDis("");
   };
-
 
   return (
     <Box
@@ -138,51 +101,15 @@ function ShopingCart() {
             </Box>
           </Box>
 
-
-          {cartProducts.map((item, index) => (
-            <Box className={classes.tr} key={index}>
-              <Box>
-                <Box className={classes.imgContainer}>
-                  <img
-                    width="90%"
-                    src={item.cover}
-                    alt=""
-                  />
-                </Box>
-              </Box>
-              <Box>
-                <Box component="span" className={classes.name}>
-                  {item.price}
-                </Box>
-              </Box>
-              <Box>
-                <Box component="span">
-                  <Box display="flex" marginLeft="20px" width="30px">
-                    <Box className={classes.count}>
-                      <AddIcon />
-                    </Box>
-                    <Box
-                      sx={{
-                        border: "1px solid grey",
-                        width: "20px",
-                      }}
-                      component="div"
-                    >
-                      <Typography padding="5px">{item.quantity}</Typography>
-                    </Box>
-                    <Box className={classes.count}>
-                      <RemoveIcon />
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-              <Box>
-                <Box component="span" className={classes.name}>
-                 {item.totalPrice}
-                </Box>
-              </Box>
-            </Box>
-          ))}
+          {cartProducts.length === 0 ? (
+            <Typography variant="h6" textAlign="center">
+              سبد خرید شما خالیه!
+            </Typography>
+          ) : (
+            cartProducts.map((item, index) => (
+              <CartItem item={item} key={index} />
+            ))
+          )}
         </Box>
 
         {/* discount section */}
@@ -238,7 +165,7 @@ function ShopingCart() {
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
               قیمت کل
             </Typography>
-            <Typography variant="subtitle2"> $79.60</Typography>
+            <Typography variant="subtitle2">   {`${totalAmount} تومان`}</Typography>
           </Box>
           <Box className={classes.totalText}>
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
