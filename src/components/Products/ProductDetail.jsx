@@ -6,6 +6,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { useNavigate } from "react-router-dom";
 import data from '../../data/db.json'
 import {useParams} from "react-router-dom"
+import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -21,16 +22,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProductDetail() {
-
-  const {productId} = useParams()
-  const thisProduct = data.products.find(prod => prod.id === productId)
-
   const classes = useStyles();
+  const { id } = useParams();
+
+  const product = data.products.find((item) => item.id === id);
+  const {name,price,size,material,cover } = product;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product]);
+
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/finalcart";
     navigate(path);
   };
+
   return (
     <Box marginTop="150px">
       <Box
@@ -42,18 +49,18 @@ function ProductDetail() {
         <Box>
           <img
             width="90%"
-            src="https://limooshop.com/13575-large_default/%D8%B4%D8%A7%D9%84-%D9%85%D8%AC%D9%84%D8%B3%DB%8C-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%A7%D8%B1-2446.jpg"
+            src={cover}
             alt=""
           />
         </Box>
         <Box padding="20px" marginTop="50px">
           <Box className={classes.title}>
             <Typography variant="h5">
-           {data.name}
+           {name}
             </Typography>
           </Box>
           <Box className={classes.title}>
-            <Typography variant="h5"> 316000 تومان </Typography>
+            <Typography variant="h5">{price}</Typography>
           </Box>
           <Box className={classes.text}>
             <Typography variant="h6"> مشخصات کلی محصول</Typography>
@@ -62,28 +69,16 @@ function ProductDetail() {
             <Typography variant="h6" marginLeft="5px">
               ابعاد :
             </Typography>
-            <Typography variant="subtitle1"> 70*2 </Typography>
+            <Typography variant="subtitle1"> {size} </Typography>
           </Box>
           <Box className={classes.text} display="flex" alignItems="center">
             <Typography variant="h6" marginLeft="5px">
               جنس :
             </Typography>
-            <Typography variant="subtitle1"> کشمیر،نخ </Typography>
+            <Typography variant="subtitle1">{material}</Typography>
           </Box>
           <Box className={classes.text} display="flex" alignItems="center">
-            <Typography variant="h6" marginLeft="5px">
-              فصل :
-            </Typography>
-            <Typography variant="subtitle1"> پاییز،زمستان </Typography>
-          </Box>
-          <Box className={classes.text} display="flex" alignItems="center">
-            <Typography variant="h6" marginLeft="5px">
-              جزییات :{" "}
-            </Typography>
-            <Typography variant="subtitle1">
-              {" "}
-              سبک و راحت ، ایستایی مناسب روی سر
-            </Typography>
+           
           </Box>
           <Box
             display="flex"

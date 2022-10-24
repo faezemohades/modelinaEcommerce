@@ -29,13 +29,13 @@ function ProductCard({item}) {
   };
   return (
     <Box>
-      <Card sx={{ maxWidth: 345 }} key={id}>
+      <Card sx={{ maxWidth: 345 ,margin:"auto"}} key={id}>
         <CardActionArea>
           <CardMedia component="img" height="140" image={cover} alt="cover " />
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
               <Link
-                to={`/productd/${id}`}
+                to={`/products/${id}`}
                 style={{ textDecoration: "none", color: "grey" }}
               >
                 {name}

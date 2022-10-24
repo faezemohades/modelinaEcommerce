@@ -23,7 +23,7 @@ root.render(
           pauseOnFocusLoss
           draggable
           pauseOnHover={false}
-          theme="colored"
+          theme="light"
         />
         <App />
       </Provider>

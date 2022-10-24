@@ -37,7 +37,7 @@ function DrawerComp() {
         <SearchBar />
         <Link
           onClick={() => setOpen(false)}
-          to="/productl"
+          to="/products"
           className={classes.link}        >
           <DrawerItem> محصولات </DrawerItem>
         </Link>

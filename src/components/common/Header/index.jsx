@@ -96,10 +96,10 @@ function Header() {
             {/* menu */}
             <Grid item xs={5} display="flex" alignItems="center">
               <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                <Link to="/productI" className={classes.link}>
+                <Link to="/products" className={classes.link}>
                   <Tab label="محصولات" />
                 </Link>
-                <Link to="/" className={classes.link}>
+                <Link to="/products" className={classes.link}>
                   <Tab label="فروش عمده" />
                 </Link>
                 <Link to="/about" className={classes.link}>

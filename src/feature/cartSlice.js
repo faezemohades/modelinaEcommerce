@@ -19,8 +19,7 @@ const cartSlice = createSlice({
       state.totalQuantity++;
 
       if (!existingItem) {
-        console.log("test")
-        state.cartItems.push({
+         state.cartItems.push({
           id: newItem.id,
           name: newItem.name,
           cover: newItem.cover,
