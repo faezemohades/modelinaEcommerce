@@ -46,6 +46,7 @@ function CartItem({item}) {
 
     const incrementItem=()=>{
         dispatch(cartActions.addItem({
+          id,
          cover,
          price,
          quantity,

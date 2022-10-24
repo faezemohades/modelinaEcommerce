@@ -12,8 +12,8 @@ import { cartActions } from "../../feature/cartSlice";
 
 import { toast } from 'react-toastify';
 
-function ProductCard(props) {
-  const { id, name, cover, price, size, material } = props.item;
+function ProductCard({item}) {
+  const { id, name, cover, price, size, material } =item;
 
   const dispatch = useDispatch();
 

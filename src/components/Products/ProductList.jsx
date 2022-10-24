@@ -24,7 +24,7 @@ function ProductList() {
       >
         <Grid item sm={6} md={4} lg={3}>
           <Item>
-          {data.products.map((item, index) => (
+          {data?.products?.map((item, index) => (
               <ProductCard item={item}  key={index}/>
               ))}
               </Item>

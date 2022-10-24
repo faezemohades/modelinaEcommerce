@@ -63,7 +63,7 @@ function ShopingCart() {
   const [dis, setDis] = useState("");
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cartItems);
-const totalAmount=useSelector(state=>state.cart.totalAmount)
+const totalAmount = useSelector((state) => state.cart.totalAmount)
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/finalcart";
@@ -165,7 +165,7 @@ const totalAmount=useSelector(state=>state.cart.totalAmount)
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
               قیمت کل
             </Typography>
-            <Typography variant="subtitle2">   {`${totalAmount} تومان`}</Typography>
+            <Typography variant="subtitle2"> {`${totalAmount} تومان`} </Typography>
           </Box>
           <Box className={classes.totalText}>
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
