@@ -3,8 +3,7 @@ import { makeStyles } from "@mui/styles";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { Box, IconButton, InputBase } from "@mui/material";
-import { useState } from "react";
-const useStyles = makeStyles((theme) => ({
+ const useStyles = makeStyles((theme) => ({
   search: {
     display: "flex",
     alignItems: "center",

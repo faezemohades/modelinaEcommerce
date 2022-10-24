@@ -1,6 +1,6 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
-import SearchBar from "../common/Header/SearchBar";
+import SearchBar from "../pages/Home/SearchBar";
 import { makeStyles } from "@mui/styles";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";

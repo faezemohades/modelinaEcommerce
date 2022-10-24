@@ -16,7 +16,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import RedeemIcon from "@mui/icons-material/Redeem";
 import logo from "../../../assets/logooo.png";
 import DrawerComp from "./DrawerComp";
-import SearchBar from "./SearchBar";
+import SearchBar from "../../pages/Home/SearchBar";
 import {makeStyles} from "@mui/styles";
 import { useState } from 'react';
 import {useSelector} from 'react-redux'
@@ -120,8 +120,7 @@ function Header() {
                 width: "100vw",
               }}
             >
-              <SearchBar />
-            </Grid>
+             </Grid>
             
             {/* leftbar */}
             <Grid item xs={1}>
