@@ -16,14 +16,14 @@ import LoginIcon from "@mui/icons-material/Login";
 import RedeemIcon from "@mui/icons-material/Redeem";
 import logo from "../../../assets/logooo.png";
 import DrawerComp from "./DrawerComp";
-import SearchBar from "../../pages/Home/SearchBar";
 import {makeStyles} from "@mui/styles";
 import { useState } from 'react';
 import {useSelector} from 'react-redux'
 const useStyles = makeStyles((theme) => ({
     link: {
         textDecoration: "none",
-        color: "grey"
+        color: theme.palette.common.grey,
+      
     }
 }));
 function Header() {

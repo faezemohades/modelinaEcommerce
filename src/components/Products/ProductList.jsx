@@ -13,6 +13,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function ProductList() {
+
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid

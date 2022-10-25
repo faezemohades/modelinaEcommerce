@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    marginTop:"40px",
+    marginTop:"150px",
     marginBottom:"40px"
   },
   center: { textAlign: "center" },

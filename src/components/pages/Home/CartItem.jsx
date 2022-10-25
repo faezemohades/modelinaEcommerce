@@ -64,9 +64,7 @@ function CartItem({item}) {
 
       const deleteItem=()=>{
         dispatch(cartActions.deleteItem(id))
-     
-
-      }
+}
   return (
     
         <Box className={classes.tr}>

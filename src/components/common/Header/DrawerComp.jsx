@@ -2,7 +2,6 @@ import React from "react";
 import MenuTwoToneIcon from "@mui/icons-material/MenuTwoTone";
 import { Drawer, IconButton } from "@mui/material";
 import { useState } from "react";
-import SearchBar from "../../pages/Home/SearchBar";
 import { Link } from "react-router-dom";
 import DrawerItem from "./DrawerItem";
 import { makeStyles } from "@mui/styles";
@@ -34,8 +33,7 @@ function DrawerComp() {
         open={open}
         onClose={() => setOpen(false)}
       >
-        <SearchBar />
-        <Link
+         <Link
           onClick={() => setOpen(false)}
           to="/products"
           className={classes.link}        >

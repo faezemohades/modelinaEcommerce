@@ -1,7 +1,6 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import SearchBar from "../pages/Home/SearchBar";
-import { makeStyles } from "@mui/styles";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -12,7 +11,7 @@ import ProductCard from "./ProductCard";
 import { styled } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
 import "../../styles/pagination.css";
-
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -34,9 +33,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "20px",
     marginBottom: "10px",
   },
-
 }));
-
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -49,16 +46,14 @@ const Item = styled(Paper)(({ theme }) => ({
 function AllProducts() {
   const [searchTerm, setSearchTerm] = useState("");
 
-
   const classes = useStyles();
-  
+
   const [pageNumber, setPageNumber] = useState(0);
 
-const searchedProduct=data.products.filter((item) => {
-  if (searchTerm.value === "") return item;
-  if (item.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    return item;
-})
+  const searchedProduct = data.products.filter((item) => {
+    if (searchTerm.value === "") return item;
+    if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) return item;
+  });
 
   const productPerPage = 12;
   const visitedPage = pageNumber * productPerPage;
@@ -74,14 +69,14 @@ const searchedProduct=data.products.filter((item) => {
   };
 
   return (
-    <Box marginTop="200px">
+    <Box marginTop="200px" width="90vw">
       <Box className={classes.title}>
         <Typography variant="h4"> فروشگاه</Typography>
       </Box>
       <Box display="flex">
         {/* sidebar */}
 
-        <Box flex={1} margin=" 0 auto">
+        <Box flex={1} margin="20px">
           <Box sx={{ width: "100%" }}>
             <SearchBar
               sx={{ width: "100%" }}
@@ -90,7 +85,7 @@ const searchedProduct=data.products.filter((item) => {
             />
           </Box>
 
-           {/* category */}
+          {/* category */}
           <Box
             sx={{
               margin: "30px 10px",
@@ -98,7 +93,6 @@ const searchedProduct=data.products.filter((item) => {
               padding: "10px",
             }}
           >
-           
             <Typography variant="subtitle1" textAlign="center">
               دسته بندی محصولات :
             </Typography>
@@ -107,11 +101,11 @@ const searchedProduct=data.products.filter((item) => {
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">محصولات</InputLabel>
               <Select
-              defaultValue=""
+                defaultValue=""
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 label="محصولات"
-               >
+              >
                 <MenuItem value={"shal"}>شال</MenuItem>
                 <MenuItem value={"scarf"}>روسری</MenuItem>
               </Select>
@@ -122,12 +116,12 @@ const searchedProduct=data.products.filter((item) => {
         {/* feed */}
 
         <Grid
+          padding="20px"
           item
           container
-          spacing={{ xs: 2, md: 3 }}
+          spacing={{ xs: 2, md: 2 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
           flex={4}
-          padding="20px"
         >
           {displayPage.map((item) => (
             <Grid item xs={2} sm={4} md={4} key={item.id}>

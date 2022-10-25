@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, InputBase, Typography } from "@mui/material";
 import { useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
@@ -61,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
 function ShopingCart() {
   const classes = useStyles();
   const [dis, setDis] = useState("");
-  const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cartItems);
 const totalAmount = useSelector((state) => state.cart.totalAmount)
   let navigate = useNavigate();

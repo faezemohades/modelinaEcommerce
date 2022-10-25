@@ -13,7 +13,7 @@ import { cartActions } from "../../feature/cartSlice";
 import { toast } from 'react-toastify';
 
 function ProductCard({item}) {
-  const { id, name, cover, price, size, material } =item;
+  const { id, name, cover, price } =item;
 
   const dispatch = useDispatch();
 
