@@ -127,7 +127,7 @@ function ProductDetail() {
           columns={{ xs: 2, sm: 2, md: 12 }}
           flex={4}
         >
-          {relatedProduct.slice(1, 6).map((item) => (
+          {relatedProduct.slice(1, 5).map((item) => (
             <Grid item xs={2} sm={4} md={2} key={item.id}>
               <ProductCard item={item} />
             </Grid>

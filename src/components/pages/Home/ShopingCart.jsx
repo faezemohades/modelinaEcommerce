@@ -1,24 +1,23 @@
 import React from "react";
-import { Box, Button, InputBase, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useSelector } from "react-redux";
-
-import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "80px",
     padding: "50px",
     display: "flex",
+    minWidth: "600px",
   },
 
   table: {
     width: "80%",
     marginBottom: "20px",
     margin: "auto",
-    minWidth: "60%",
+    minWidth: "600px",
   },
   trTitle: {
     display: "flex",
@@ -28,63 +27,17 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "20px",
   },
 
-  total: {
-    fontWeight: "500",
-    fontSize: "18px",
-  },
-  wrapper: {
-    margin: "auto",
-    width: "70%",
-    maxHeight: "300px",
-    padding: "30px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    border: "3px solid #E2E2E2",
-    borderRadius: "5px",
-    minWidth: "50%",
-  },
-
-  totalText: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  discount: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "60%",
-    margin: "auto",
+  link: {
+    textDecoration: "none",
+    color: theme.palette.common.grey,
   },
 }));
 
 function ShopingCart() {
   const classes = useStyles();
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+
   const cartProducts = useSelector((state) => state.cart.cartItems);
-  const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
-  const [dis, setDis] = useState("");
-  const [discount, setDiscount] = useState("%");
-  const [totalSum, setTotalSum] = useState(cartTotalAmount);
-  let navigate = useNavigate();
-  const routeChange = () => {
-    let path = "/finalcart";
-    navigate(path);
-  };
-
-  const copounHandler = (event) => {
-    event.preventDefault();
-
-    if (dis === "") {
-      return;
-    } else if (dis === "gold") {
-      setTotalSum(cartTotalAmount - (20 * cartTotalAmount) / 100);
-      setDiscount("20%");
-    } else if (dis === "silver") {
-      setTotalSum(cartTotalAmount - (10 * cartTotalAmount) / 100);
-      setDiscount("10%");
-    }
-    setDis("")
-  };
 
   return (
     <Box
@@ -122,89 +75,47 @@ function ShopingCart() {
           )}
         </Box>
 
-        {/* discount section */}
-        <Box
-          component="form"
-          onSubmit={copounHandler}
-          className={classes.discount}
-        >
-          <Box
-            sx={{
-              border: "0.5px solid #CCCCCC",
-              padding: "5px",
-              borderRadius: "3px",
-              width: "80%",
-            }}
-          >
-            <InputBase
-              required
-              value={dis}
-              onChange={(e) => setDis(e.target.value)}
-              placeholder="کد تخفیف :"
-              sx={{ padding: "5px" }}
-            ></InputBase>
+        <Box marginRight="150px" marginTop="80px">
+          <Box display="flex" alignItems="center" marginRight="20px">
+            <Typography variant="h5">قیمت کل : </Typography>
+            <Typography variant="h6">{`  ${totalAmount} تومان `}</Typography>
           </Box>
-          <Box>
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{
-                color: "white",
-                fontWeight: "bold",
-                width: "100px",
-                padding: "10px",
-                height: "auto",
-                marginRight: "15px",
-              }}
-            >
-              اعمال تخفیف{" "}
-            </Button>
-          </Box>
-        </Box>
-      </Box>
-
-      {/* total box */}
-      <Box
-        sx={{ flex: { xs: "2", md: "4" }, marginTop: "20px", width: "90vw" }}
-      >
-        <Box className={classes.wrapper} sx={{ flex: { xs: "2", md: "4" } }}>
-          <Typography variant="h5" sx={{ fontWeight: "700" }}>
-            مجموع کل سبد خرید
-          </Typography>
-          <Box className={classes.totalText}>
-            <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-              قیمت کل
-            </Typography>
-            <Typography variant="subtitle2">
+          <Box display="flex" justifyContent="flex-start" marginTop="20px">
+            <Link className={classes.link} to="/products">
               {" "}
-              {`${cartTotalAmount} تومان`}{" "}
-            </Typography>
+              <Button
+                variant="contained"
+                sx={{
+                  fontSize: "20px",
+                  color: "white",
+                  fontWeight: "bold",
+                  width: "120px",
+                  padding: "5px",
+                  height: "auto",
+                  marginRight: "15px",
+                }}
+              >
+                ادامه خرید
+              </Button>
+            </Link>
+            <Link className={classes.link} to="/finalcart">
+              {" "}
+              <Button
+                variant="contained"
+                sx={{
+                  fontSize: "20px",
+                  width: "120px",
+                  color: "white",
+                  fontWeight: "bold",
+                  padding: "5px",
+                  height: "auto",
+                  marginRight: "15px",
+                }}
+              >
+                پرداخت
+              </Button>
+            </Link>
           </Box>
-          <Box className={classes.totalText}>
-            <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-              تخفیف
-            </Typography>
-            <Typography variant="subtitle2">{discount}</Typography>{" "}
-          </Box>
-          <Box className={classes.totalText}>
-            <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-              مجموع
-            </Typography>
-            <Typography variant="subtitle2">{`${totalSum} تومان`}</Typography>
-          </Box>
-          <Button
-            onClick={routeChange}
-            variant="contained"
-            sx={{
-              padding: "10px 15px",
-              color: "white",
-              height: " 30px",
-              fontWeight: "bold",
-              marginTop: "20px",
-            }}
-          >
-            اقدام به پرداخت
-          </Button>
         </Box>
       </Box>
     </Box>
