@@ -60,19 +60,30 @@ const useStyles = makeStyles((theme) => ({
 
 function ShopingCart() {
   const classes = useStyles();
-  const [dis, setDis] = useState("");
   const cartProducts = useSelector((state) => state.cart.cartItems);
-const totalAmount = useSelector((state) => state.cart.totalAmount)
+  const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
+  const [dis, setDis] = useState("");
+  const [discount, setDiscount] = useState("%");
+  const [totalSum, setTotalSum] = useState(cartTotalAmount);
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/finalcart";
     navigate(path);
   };
 
-  const submitHandler = (event) => {
+  const copounHandler = (event) => {
     event.preventDefault();
-    if (dis === "") return;
-    setDis("");
+
+    if (dis === "") {
+      return;
+    } else if (dis === "gold") {
+      setTotalSum(cartTotalAmount - (20 * cartTotalAmount) / 100);
+      setDiscount("20%");
+    } else if (dis === "silver") {
+      setTotalSum(cartTotalAmount - (10 * cartTotalAmount) / 100);
+      setDiscount("10%");
+    }
+    setDis("")
   };
 
   return (
@@ -114,7 +125,7 @@ const totalAmount = useSelector((state) => state.cart.totalAmount)
         {/* discount section */}
         <Box
           component="form"
-          onSubmit={submitHandler}
+          onSubmit={copounHandler}
           className={classes.discount}
         >
           <Box
@@ -164,19 +175,22 @@ const totalAmount = useSelector((state) => state.cart.totalAmount)
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
               قیمت کل
             </Typography>
-            <Typography variant="subtitle2"> {`${totalAmount} تومان`} </Typography>
+            <Typography variant="subtitle2">
+              {" "}
+              {`${cartTotalAmount} تومان`}{" "}
+            </Typography>
           </Box>
           <Box className={classes.totalText}>
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
               تخفیف
             </Typography>
-            <Typography variant="subtitle2"> 0.0</Typography>{" "}
+            <Typography variant="subtitle2">{discount}</Typography>{" "}
           </Box>
           <Box className={classes.totalText}>
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
               مجموع
             </Typography>
-            <Typography variant="subtitle2"> $79.60</Typography>
+            <Typography variant="subtitle2">{`${totalSum} تومان`}</Typography>
           </Box>
           <Button
             onClick={routeChange}

@@ -65,7 +65,7 @@ function ProductDetail() {
         flexDirection={{ xs: "column", md: "column", lg: "row" }}
         alignItems={{ xs: "center", md: "center", lg: "self-start" }}
       >
-        <Box width="50vw">
+        <Box width="45vw">
           <img width="100%" src={cover} alt="" />
         </Box>
         <Box padding="20px" marginTop="50px">

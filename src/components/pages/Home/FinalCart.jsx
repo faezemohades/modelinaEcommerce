@@ -1,44 +1,35 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 
 function FinalCart() {
   return (
     <Box marginTop="150px" marginX="60px" padding="10px" width="50%">
       <Box marginBottom="40px" minWidth="500px">
-        <Box>
-          <Typography variant="h5">مدیریت کالاها</Typography>
+        <Box marginRight="20px">
+          <Typography variant="h5"> نهایی کردن خرید  </Typography>
         </Box>
       </Box>
-      <Stack  >
-      <Box margin="10px" width="100%">
-        <Typography component="label" variant="h6">
-          نام :
-        </Typography>
-        <Box   component="input" required marginX="15px" />
+   <Box component="form">
+   <Stack  >
+      <Box margin="10px" >
+     
+      <TextField id="standard-basic" placeholder="نام " fullWidth variant="standard" />
       </Box>
       <Box margin="10px">
-        <Typography component="label" variant="h6">
-            نام خانوادگی :
-        </Typography>
-        <Box component="input" required marginX="15px" />
+      <TextField id="standard-basic" placeholder="نام خانوادگی" fullWidth variant="standard" />
       </Box>
       </Stack>
       <Stack  >
       <Box margin="10px">
-        <Typography component="label" variant="h6" >تاریخ تحویل :</Typography>
-        <Box component="input" required marginX="15px"/>
-
+      <TextField id="standard-basic" placeholder="تلفن همراه " fullWidth variant="standard" />
       </Box>
       <Box margin="10px">
-        <Typography component="label" variant="h6" >تلفن همراه :</Typography>
-        <Box component="input" required marginX="15px"/>
-
+      <TextField id="standard-basic" placeholder="تاریخ تحویل"  fullWidth variant="standard" />
       </Box>
       </Stack>
      
       <Box margin="10px">
-        <Typography component="label" variant="h6" >آدرس :</Typography>
-        <Box component="input" required marginX="15px"/>
+      <TextField id="standard-basic" placeholder="آدرس" fullWidth multiline  rows={2} variant="standard" />
 
       </Box>
       <Box display="flex" justifyContent="center">
@@ -48,11 +39,13 @@ function FinalCart() {
             padding: "8px 15px",
             color: "white",
             fontWeight: "bold",
+            marginTop:"20px"
           }}
         >
          ذخیره
         </Button>
       </Box>
+   </Box>
     </Box>
   );
 }
