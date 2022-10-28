@@ -7,8 +7,9 @@ import { useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../feature/cartSlice";
-import { toast } from 'react-toastify';
-
+import { toast } from "react-toastify";
+import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
+import MopedOutlinedIcon from '@mui/icons-material/MopedOutlined';
 const useStyles = makeStyles((theme) => ({
   title: {
     margin: "10px",
@@ -23,18 +24,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProductDetail() {
-
   const classes = useStyles();
   const { id } = useParams();
   const products = data.products;
   const product = products.find((item) => item.id === id);
   const { name, price, size, material, cover, category } = product;
   const relatedProduct = products.filter((item) => category === item.category);
- 
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [product]);
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,14 +49,13 @@ function ProductDetail() {
         price,
       })
     );
-    toast.success("محصول به سبد خرید شما اضافه شد")
+    toast.success("محصول به سبد خرید شما اضافه شد");
   };
-
-
-
 
   return (
     <Box marginTop="150px">
+
+      {/* product detail */}
       <Box
         marginTop="50px"
         marginBottom="100px"
@@ -65,7 +63,7 @@ function ProductDetail() {
         flexDirection={{ xs: "column", md: "column", lg: "row" }}
         alignItems={{ xs: "center", md: "center", lg: "self-start" }}
       >
-        <Box width="45vw">
+        <Box width="500px">
           <img width="100%" src={cover} alt="" />
         </Box>
         <Box padding="20px" marginTop="50px">
@@ -100,10 +98,9 @@ function ProductDetail() {
             alignItems="center"
             sx={{ marginTop: "20px", marginX: "20px" }}
           >
-         
             <Box>
               <Button
-                 sx={{ padding: "10px 15px", color: "white" }}
+                sx={{ padding: "10px 15px", color: "white" }}
                 variant="contained"
                 onClick={addToCart}
               >
@@ -113,27 +110,51 @@ function ProductDetail() {
           </Box>
         </Box>
       </Box>
-      <Box marginTop="150px" margin="auto"
->
-     <Box margin="50px 0px" textAlign="center" className={classes.text}>
-     <Typography variant="h4"  >محصولات مرتبط</Typography>
-     </Box>
-       <Box  >
-       <Grid
-       display="flex" justifyContent="space-evenly"
-           item
-          container
-          spacing={{ xs: 2, md: 2 }}
-          columns={{ xs: 2, sm: 2, md: 12 }}
-          flex={4}
-        >
-          {relatedProduct.slice(1, 5).map((item) => (
-            <Grid item xs={2} sm={4} md={2} key={item.id}>
-              <ProductCard item={item} />
-            </Grid>
-          ))}
-        </Grid>
-       </Box>
+      <Box display="flex"  justifyContent="center">
+        <Box sx={{border:"2px solid #DEDEDE", width:"250px",marginX:"10px"}}>
+        <Box display="flex" justifyContent="space-around" paddingTop="10px">
+          <LocalShippingOutlinedIcon fontSize="large"/>
+          <Typography variant="h5">ارسال پست</Typography>
+        </Box>
+        <Typography variant="subtitle1" sx={{padding:"20px"}}>
+        ارسال تهران و شهرستان ها
+تحویل 24 - 48 ساعت کاری در روزهای کاری
+        </Typography>
+        </Box>
+        <Box sx={{border:"0.8px solid #DEDEDE", width:"250px"}}>
+        <Box display="flex" justifyContent="space-around" paddingTop="10px">
+          <MopedOutlinedIcon fontSize="large"/>
+          <Typography variant="h5"> ارسال سریع </Typography>
+        </Box>
+        <Typography variant="subtitle1" sx={{padding:"20px"}}>
+        ارسال به وسیله پیک فقط در تهران
+تحویل 2 ساعته در روزهای کاری
+         </Typography>
+        </Box>
+      </Box>
+
+      {/* rekated product */}
+      <Box marginTop="150px" margin="auto">
+        <Box margin="50px 0px" textAlign="center" className={classes.text}>
+          <Typography variant="h4">محصولات مرتبط</Typography>
+        </Box>
+        <Box>
+          <Grid
+            display="flex"
+            justifyContent="space-evenly"
+            item
+            container
+            spacing={{ xs: 2, md: 2 }}
+            columns={{ xs: 2, sm: 2, md: 12 }}
+            flex={4}
+          >
+            {relatedProduct.slice(1, 5).map((item) => (
+              <Grid item xs={2} sm={4} md={2} key={item.id}>
+                <ProductCard item={item} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Box>
     </Box>
   );

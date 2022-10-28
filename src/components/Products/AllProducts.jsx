@@ -1,10 +1,7 @@
-import { Box, Grid, Paper, Typography } from "@mui/material";
-import React from "react";
+import { Box, Button, Grid, Paper, Typography } from "@mui/material";
+import React, { useEffect } from "react";
 import SearchBar from "../pages/Home/SearchBar";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+
 import data from "../../data/db.json";
 import { useState } from "react";
 import ProductCard from "./ProductCard";
@@ -44,13 +41,38 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function AllProducts() {
-  const [searchTerm, setSearchTerm] = useState("");
-
   const classes = useStyles();
-
+  const [searchTerm, setSearchTerm] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
+  const [category, setCategory] = useState("ALL");
+  const [allProducts, setAllProducts] = useState(data.products);
 
-  const searchedProduct = data.products.filter((item) => {
+
+  useEffect(() => {
+    if (category === "All") {
+      setAllProducts(data.products);
+    }
+
+    if (category === "shal") {
+      const filteredProducts = data.products.filter(
+        (item) => item.category === "shal"
+      );
+
+      setAllProducts(filteredProducts);
+    }
+
+    if (category === "scarf") {
+      const filteredProducts = data.products.filter(
+        (item) => item.category === "scarf"
+      );
+
+      setAllProducts(filteredProducts);
+    }
+
+    
+  }, [category]);
+
+  const searchedProduct = allProducts.filter((item) => {
     if (searchTerm.value === "") return item;
     if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) return item;
   });
@@ -94,23 +116,19 @@ function AllProducts() {
             }}
           >
             <Typography variant="subtitle1" textAlign="center">
-              دسته بندی محصولات :
+              دسته بندی محصولات
             </Typography>
           </Box>
-          <Box sx={{ minWidth: 120, direction: "rtl" }}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">محصولات</InputLabel>
-              <Select
-                defaultValue=""
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="محصولات"
-              >
-                <MenuItem value={"shal"}>شال</MenuItem>
-                <MenuItem value={"scarf"}>روسری</MenuItem>
-              </Select>
-            </FormControl>
+          <Box sx={{borderBottom:"1px solid grey"}}>
+          <Button href="#text-buttons" style={{color:"grey",fontSize:"18px"}} onClick={() => setCategory("All")}>همه</Button>
           </Box>
+          <Box sx={{borderBottom:"1px solid grey"}}>
+          <Button href="#text-buttons" style={{color:"grey",fontSize:"18px"}} onClick={() => setCategory("shal")}>شال</Button>
+          </Box>
+          <Box sx={{borderBottom:"1px solid grey"}}>
+          <Button href="#text-buttons" style={{color:"grey",fontSize:"18px"}} onClick={() => setCategory("scarf")}>روسری</Button>
+          </Box>
+         
         </Box>
 
         {/* feed */}
@@ -123,7 +141,25 @@ function AllProducts() {
           columns={{ xs: 4, sm: 8, md: 12 }}
           flex={4}
         >
-          {displayPage.map((item) => (
+          {displayPage?.map((item) => (
+            <Grid item xs={2} sm={4} md={4} key={item.id}>
+              <Item>
+                <ProductCard item={item} />
+              </Item>
+            </Grid>
+          ))}
+        </Grid>
+
+
+        <Grid
+          padding="20px"
+          item
+          container
+          spacing={{ xs: 2, md: 2 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          flex={4}
+        >
+          {allProducts?.map((item) => (
             <Grid item xs={2} sm={4} md={4} key={item.id}>
               <Item>
                 <ProductCard item={item} />

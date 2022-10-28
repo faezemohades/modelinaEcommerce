@@ -63,7 +63,7 @@ function Modelina() {
 
   return (
     <Box className={classes.container}>
-      <Box display="flex" justifyContent="space-around"  width="100%"  >
+      <Box display="flex" justifyContent="center"  width="100%"  >
         <Box className={classes.animatedItem}   >
           <img
             src="https://modelinaco.com/wp-content/uploads/2022/09/site1-gerd-.png"

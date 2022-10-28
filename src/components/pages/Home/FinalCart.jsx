@@ -10,8 +10,7 @@ import React from "react";
 import { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-const useStyles = makeStyles((theme) => ({
+ const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "80px",
     padding: "50px",

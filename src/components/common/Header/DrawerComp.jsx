@@ -39,12 +39,7 @@ function DrawerComp() {
           className={classes.link}        >
           <DrawerItem> محصولات </DrawerItem>
         </Link>
-        <Link
-          onClick={() => setOpen(false)}
-          to="/products"
-          className={classes.link}        >
-          <DrawerItem> فروش عمده </DrawerItem>
-        </Link>
+       
         <Link
           onClick={() => setOpen(false)}
           to="/about"

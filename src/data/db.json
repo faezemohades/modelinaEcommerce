@@ -4,7 +4,7 @@
         "id":"1",
         "name":"شال موهرپاییزه باربری",
          "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1499-2.jpg",
-         "price":"276.000",
+         "price":"276000",
           "size":"70*195",
           "category":"shal",
          "material":"نخ"
@@ -13,7 +13,7 @@
           "id":"2",
           "name":"شال نخ پاییزه دیور",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1485-2.jpg",
-           "price":"336.000",
+           "price":"336000",
             "size":"70*190",
             "category": "shal",
            "material":"نخ"
@@ -22,7 +22,7 @@
           "id":"3",
           "name":"شال نخ پاییزه شاین",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1496-3.jpg",
-           "price":"336.000",
+           "price":"336000",
             "size":"70*190",
             "category": "shal",
 
@@ -32,7 +32,7 @@
           "id":"4",
           "name":"روسری نخ پاییزه",
           "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1501-30.jpg",
-          "price":"296.000",
+          "price":"296000",
            "size":"135*135",
          "category": "scarf",
           "material":"موهر"
@@ -42,7 +42,7 @@
           "id":"5",
           "name":"شال  پاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1x-4.jpg",
-           "price":"336.000",
+           "price":"336000",
             "size":"70*190",
            "category": "shal",
 
@@ -52,7 +52,7 @@
           "id":"6",
           "name":"شال نخ پاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1z.jpg",
-           "price":"196.000",
+           "price":"196000",
             "size":"70*190",
             "category": "shal",
 
@@ -62,7 +62,7 @@
           "id":"7",
           "name":"شال وول پاییزه (وارداتی)",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1432-3.jpg",
-           "price":"236.000",
+           "price":"236000",
             "size":"70*190",
             "category": "shal",
 
@@ -72,7 +72,7 @@
           "id":"8",
           "name":"شال نخ پاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1465-3.jpg",
-           "price":"196.000",
+           "price":"196000",
             "size":"70*190",
              "category": "shal",
 
@@ -82,7 +82,7 @@
           "id":"9",
           "name":"شال پلیسه پاییزه سنگشور",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1413-7.jpg",
-           "price":"190.000",
+           "price":"190000",
             "size":"70*2",
             "category": "shal",
 
@@ -92,7 +92,7 @@
           "id":"10",
           "name":"شال موهر اعلا(وارداتی)",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1429-4.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"80*2",
              "category": "shal",
 
@@ -102,7 +102,7 @@
           "id":"11",
           "name":"شال موهراعلا (وارداتی)",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1427-3.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"80*2",
             "category": "shal",
 
@@ -112,7 +112,7 @@
           "id":"12",
           "name":"روسری قواره کوچک ژاکارد ابریشم",
           "cover":"https://modelinaco.com/wp-content/uploads/2021/07/1125_76_M18-600x750.jpg",
-          "price":"116.000",
+          "price":"116000",
            "size":"80*80",
          "category": "scarf",
           "material":"ابریشم"
@@ -122,7 +122,7 @@
           "id":"13",
           "name":"شال موهر اعلا (وارداتی)",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1424-3.jpg",
-           "price":"376.000",
+           "price":"376000",
             "size":"70*2",
             "category": "shal",
 
@@ -132,7 +132,7 @@
           "id":"14",
           "name":"شال موهر اعلا (وارداتی)",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1423-3.jpg",
-           "price":"376.000",
+           "price":"376000",
             "size":"80*2",
             "category": "shal",
 
@@ -142,7 +142,7 @@
           "id":"15",
           "name":"شال پاییزه سنگشور",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1418_0000s_0003_Group-1-copy-4.jpg",
-           "price":"296.000",
+           "price":"296000",
             "size":"80*2",
             "category": "shal",
 
@@ -152,7 +152,7 @@
           "id":"16",
           "name":"شال موهر اعلا",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1419-7.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"70*2",
             "category": "shal",
 
@@ -162,7 +162,7 @@
           "id":"17",
           "name":" شال موهر اعلا(وارداتی)",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1456-5.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"80*2",
             "category": "shal",
 
@@ -172,7 +172,7 @@
           "id":"18",
           "name":" شال موهرپیچازی",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1452-7.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"80*2",
             "category": "shal",
 
@@ -182,7 +182,7 @@
           "id":"19",
           "name":" شال موهر وارداتی",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1479-3.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"80*2",
             "category": "shal",
 
@@ -191,7 +191,7 @@
           "id":"20",
           "name":" شال نخی پاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1448-3.jpg",
-           "price":"256.000",
+           "price":"256000",
             "size":"190*70",
              "category": "shal",
 
@@ -200,7 +200,7 @@
           "id":"21",
           "name":"شال نخ کنفی پاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1438-2.jpg",
-           "price":"276.000",
+           "price":"276000",
             "size":"80*2",
            "category": "shal",
 
@@ -209,7 +209,7 @@
           "id":"22",
           "name":"شال نخ پاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1434-4.jpg",
-           "price":"256.000",
+           "price":"256000",
             "size":" 190*70 ",
             "category": "shal",
 
@@ -218,7 +218,7 @@
           "id":"23",
           "name":"روسری قواره کوچک ژاکارد",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/08/1132M7-3-600x750.jpg",
-           "price":"96.000",
+           "price":"96000",
             "size":"50*50",
           "category": "scarf",
            "material":"نخ"
@@ -227,7 +227,7 @@
           "id":"24",
           "name":"شال پلیسه بهاره",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/02/1253-7-600x750.jpg",
-           "price":"177.000",
+           "price":"177000",
             "size":"80*2",
              "category": "shal",
 
@@ -236,7 +236,7 @@
           "id":"25",
           "name":"  شال اسلپ مزونی ",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/08/1401-2-1-600x750.jpg",
-           "price":"276.000",
+           "price":"276000",
             "size":"80*2",
              "category": "shal",
 
@@ -245,7 +245,7 @@
           "id":"26",
           "name":"شال نخی تابستانه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/08/1399-4-600x750.jpg",
-           "price":"156.000",
+           "price":"156000",
             "size":" 190*70",
            "category": "shal",
 
@@ -254,7 +254,7 @@
           "id":"27",
           "name":"شال مشکی مزونی",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/08/1412-9-600x750.jpg",
-           "price":"236.000",
+           "price":"236000",
             "size":"190*70",
             "category": "shal",
 
@@ -263,7 +263,7 @@
           "id":"28",
           "name":"شال مزونی تک طرح",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/07/1404-1-600x750.jpg",
-           "price":"196.000",
+           "price":"196000",
             "size":"190*70",
             "category": "shal",
 
@@ -272,7 +272,7 @@
           "id":"29",
           "name":"شال نخی فندی مدلینا",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/07/1409-5-600x750.jpg",
-           "price":"156.000",
+           "price":"156000",
             "size":"190*70",
           "category": "shal",
 
@@ -282,7 +282,7 @@
           "id":"30",
           "name":"شال نخ ابریشم",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1452-7.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"80*2",
           "category": "shal",
            "material":"موهر"
@@ -293,7 +293,7 @@
           "id":"31",
           "name":"روسری موهرپاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1501-14-1.jpg",
-           "price":"296.000",
+           "price":"296000",
             "size":"135*135",
           "category": "scarf",
            "material":"موهر"
@@ -302,7 +302,7 @@
           "id":"32",
           "name":"شال نخ پاییزه",
           "cover":"https://modelinaco.com/wp-content/uploads/2022/10/4x-1.jpg",
-          "price":"236.000",
+          "price":"236000",
            "size":"70*190",
              "category": "shal",
 
@@ -311,7 +311,7 @@
           "id":"33",
           "name":"روسری نخ پاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/4.jpg",
-           "price":"236.000",
+           "price":"236000",
             "size":"140*140",
           "category": "scarf",
            "material":"نخ"
@@ -319,7 +319,7 @@
           "id":"34",
           "name":"روسری نخ پاییزه(وارداتی)",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1501-3-1.jpg",
-           "price":"296.000",
+           "price":"296000",
             "size":"135*135",
           "category": "scarf",
            "material":"نخ"
@@ -327,7 +327,7 @@
           "id":"35",
           "name":"روسری موهرپاییزه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/10/1501-5.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"130*130",
           "category": "scarf",
            "material":"موهر"
@@ -335,7 +335,7 @@
           "id":"36",
           "name":" روسری نخی  ",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1371-7.jpg",
-           "price":"296.000",
+           "price":"296000",
             "size":"130*130",
           "category": "scarf",
            "material":"نخ"
@@ -343,7 +343,7 @@
           "id":"37",
           "name":" BABY SCARF نخی بهاره  ",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/02/1251-m1-600x750.jpg",
-           "price":"116.000",
+           "price":"116000",
             "size":"70*70",
           "category": "scarf",
            "material":"نخ"
@@ -351,7 +351,7 @@
           "id":"38",
           "name":"روسری نخی",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/01/1243-10-600x750.jpg",
-           "price":"116.000",
+           "price":"116000",
             "size":"70*70",
           "category": "scarf",
            "material":"نخ"
@@ -359,7 +359,7 @@
           "id":"39",
           "name":"شال ابریشم مجلسی ترک",
           "cover":"https://modelinaco.com/wp-content/uploads/2021/12/1230-6-600x750.jpg",
-          "price":"376.000",
+          "price":"376000",
            "size":" 190*70",
            "category": "shal",
 
@@ -368,7 +368,7 @@
           "id":"40",
           "name":"روسری قواره کوچک ژاکارد",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/08/1132M14-1-600x750.jpg",
-           "price":"96.000",
+           "price":"96000",
             "size":"50*50",
           "category": "scarf",
            "material":"نخ"
@@ -376,7 +376,7 @@
           "id":"41",
           "name":" شال موهراعلا",
           "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1425-3.jpg",
-          "price":"316.000",
+          "price":"316000",
            "size":"80*2",
           "category": "shal",
 
@@ -385,7 +385,7 @@
           "id":"42",
           "name":"روسری قواره کوچک ژاکارد ابریشم",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/07/1125_43_M8-600x750.jpg",
-           "price":"116.000",
+           "price":"116000",
             "size":"80*80",
           "category": "scarf",
            "material":"ابریشم"
@@ -393,7 +393,7 @@
           "id":"43",
           "name":"روسری قواره کوچک ژاکارد ابریشم",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/07/1125_49_M1-600x750.jpg",
-           "price":"116.000",
+           "price":"116000",
             "size":"80*80",
           "category": "scarf",
            "material":"ابریشم"
@@ -401,7 +401,7 @@
           "id":"44",
           "name":"روسری قواره کوچک ژاکارد ابریشم",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/07/1125_52_M2-600x750.jpg",
-           "price":"116.000",
+           "price":"116000",
             "size":"80*80",
           "category": "scarf",
            "material":"ابریشم"
@@ -409,7 +409,7 @@
           "id":"45",
           "name":"روسری قواره کوچک",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/09/1452-7.jpg",
-           "price":"116.000",
+           "price":"116000",
             "size":"80*80",
           "category": "scarf",
            "material":"ابریشم"
@@ -417,7 +417,7 @@
           "id":"46",
           "name":"روسری قواره کوچک ژاکارد",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/07/1125_63_M4-600x750.jpg",
-           "price":"116.000",
+           "price":"116000",
             "size":"80*80",
           "category": "scarf",
            "material":"ابریشم"
@@ -425,7 +425,7 @@
           "id":"47",
           "name":"روسری ابریشم ژاکارد",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/02/751-17-600x750.jpg",
-           "price":"178.000",
+           "price":"178000",
             "size":"130*130",
           "category": "scarf",
            "material":"ابریشم"
@@ -433,7 +433,7 @@
           "id":"48",
           "name":"روسری ابریشم",
            "cover":"https://modelinaco.com/wp-content/uploads/product/roosari/6-600x769.jpg",
-           "price":"198.000",
+           "price":"198000",
             "size":"140*140",
           "category": "scarf",
            "material":"ابریشم"
@@ -441,7 +441,7 @@
           "id":"49",
           "name":"روسری نخی تک طرح",
            "cover":"https://modelinaco.com/wp-content/uploads/2020/05/756-2-600x769.jpg",
-           "price":"110.000",
+           "price":"110000",
             "size":"140*140",
           "category": "scarf",
            "material":"نخ"
@@ -449,7 +449,7 @@
           "id":"50",
           "name":"روسری ابریشم",
            "cover":"https://modelinaco.com/wp-content/uploads/2020/02/727-3-600x769.jpg",
-           "price":"298.000",
+           "price":"298000",
             "size":"135*135",
           "category": "scarf",
            "material":"ابریشم"
@@ -457,7 +457,7 @@
           "id":"51",
           "name":"روسری نخی تابستانه",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/07/1383-1-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"140*140",
           "category": "scarf",
            "material":"نخ"
@@ -465,7 +465,7 @@
           "id":"52",
           "name":"روسری نخی بهاره مدلینا",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/02/1291-3-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"140*140",
           "category": "scarf",
            "material":"نخ"
@@ -473,7 +473,7 @@
           "id":"53",
           "name":"BABY SCARF نخی بهاره",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/02/1246-7-600x750.jpg",
-           "price":"269.000",
+           "price":"269000",
             "size":"80*80",
           "category": "scarf",
            "material":"نخ"
@@ -481,7 +481,7 @@
           "id":"54",
           "name":"روسری نخی بهاره",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/02/1255_0000s_0001_Group-1-copy-2-600x750.jpg",
-           "price":"296.000",
+           "price":"296000",
             "size":"140*140",
           "category": "scarf",
            "material":"نخ"
@@ -489,7 +489,7 @@
           "id":"55",
           "name":"روسری نخی بهاره ",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/02/1239-3-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"140*140",
           "category": "scarf",
            "material":"نخ"
@@ -497,7 +497,7 @@
           "id":"56",
           "name":"روسری نخی بهاره",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/01/1234-1-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"140*140",
           "category": "scarf",
            "material":"نخ"
@@ -505,7 +505,7 @@
           "id":"57",
           "name":"روسری نخی مدلینا",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/02/953-2-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"135*135",
           "category": "scarf",
            "material":"نخ"
@@ -513,7 +513,7 @@
           "id":"58",
           "name":"روسری حریر ابریشم وارداتی",
            "cover":"https://modelinaco.com/wp-content/uploads/2022/02/f1_0000s_0007_Group-1-copy-8-1-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"90*90",
           "category": "scarf",
            "material":"ابریشم"
@@ -521,7 +521,7 @@
           "id":"59",
           "name":"روسری نخی مدلینا ",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/07/1072-1-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"135*135",
           "category": "scarf",
            "material":"نخ"
@@ -529,7 +529,7 @@
           "id":"60",
           "name":"روسری نخی مدلینا",
            "cover":"https://modelinaco.com/wp-content/uploads/2021/08/1072M28-3-600x750.jpg",
-           "price":"316.000",
+           "price":"316000",
             "size":"135*135",
           "category": "scarf",
            "material":"نخ"
