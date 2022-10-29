@@ -55,7 +55,7 @@ function AllProducts() {
 
     if (category === "shal") {
       const filteredProducts = data.products.filter(
-        (item) => item.category === "shal"
+        (item) => item.category === "شال"
       );
 
       setAllProducts(filteredProducts);
@@ -63,7 +63,7 @@ function AllProducts() {
 
     if (category === "scarf") {
       const filteredProducts = data.products.filter(
-        (item) => item.category === "scarf"
+        (item) => item.category === "روسری"
       );
 
       setAllProducts(filteredProducts);
