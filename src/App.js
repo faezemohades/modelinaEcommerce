@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Admin from "./components/pages/Admin";
+import EditModal from "./components/pages/Admin/EditModal";
 import Inventory from "./components/pages/Admin/Inventory";
 import Orders from "./components/pages/Admin/Orders";
 import Produce from "./components/pages/Admin/Produce";
@@ -31,6 +32,8 @@ function App() {
 
             <Route exact path="/admin" element={<Admin />} />
             <Route exact path="/admin/produce" element={<Produce />} />
+            <Route exact path="/admin/editproduce/:id" element={<EditModal />} />
+
             <Route exact path="/admin/inventory" element={<Inventory />} />
             <Route exact path="/admin/orders" element={<Orders />} />
 

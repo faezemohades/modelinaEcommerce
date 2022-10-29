@@ -1,16 +1,14 @@
 import {
-  Autocomplete,
   Box,
   Button,
   Modal,
-  TextField,
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
     width: "100px",
@@ -63,14 +61,16 @@ const useStyles = makeStyles((theme) => ({
 function Produce() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const category = ["شال", "روسری"];
+ 
+  const [cover, setCover] = useState("");
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
+  const [size, setSize] = useState("");
+  const [material, setMaterial] = useState("");
 
 
-  const [name, setName] = useState();
-  const [cover, setCover] = useState();
-  const [price, setPrice] = useState();
-  const [material, setMaterial] = useState();
-  const [product, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
   const data = {
@@ -78,29 +78,48 @@ function Produce() {
     cover: cover,
     price: price,
     material: material,
+    category:category,
+    size:size
   };
 
-  const submit = (e) => {
+  const submit = async(e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/products", data).then(navigate("/"));
+   await axios.post("http://localhost:5000/products", data).then(navigate("/"));
   };
 
+  const loadUsers =async () => {
+   await axios.get("http://localhost:5000/products").then((res) => {
+      setProducts(res.data.reverse());
+    });
+  };
 
-const loadUsers=()=>{
-  axios.get("http://localhost:5000/products").then((res) => {
-    setProduct(res.data.reverse());
-  });
-}
+  const deleteHandler =async (id) => {
+   await axios.delete(`http://localhost:5000/products/${id}`).then(loadUsers());
+  };
 
- useEffect(() => {
-  loadUsers()
- }, []);
+  useEffect(() => {
+    loadUsers();
+  }, []);
 
+  const Edit=(id)=>{
+    axios.get(`http://localhost:5000/products/${id}`).then((res) => {
+      setOpen(true)
+      setName(res.data.name);
+      setCover(res.data.cover);
+      setPrice(res.data.price);
+      setMaterial(res.data.material);
+      setSize(res.data.size);
+      setCategory(res.data.category);
 
-//  const deleteHandler=()=>{
-//   axios.delete(`http://localhost:5000/products/${id}`)
-//  }
+    });
+  }
 
+  const Update=(e,id)=>{
+    e.preventDefault();
+    axios.put(`http://localhost:5000/products/${id}`,data).then (navigate("/admin"))
+  }
+
+  
   return (
     <Box marginTop="100px" marginX="10px">
       {/* top section */}
@@ -165,8 +184,7 @@ const loadUsers=()=>{
                 >
                   Upload File
                   <input
-                    type="file"
-                    hidden
+                     hidden
                     value={cover}
                     onChange={(e) => setCover(e.target.value)}
                   />
@@ -198,11 +216,15 @@ const loadUsers=()=>{
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Autocomplete
-                  sx={{ width: "100%", marginY: "10px" }}
-                  options={category}
-                  renderInput={(params) => <TextField {...params} />}
-                />
+                <Box
+                  component="input"
+                  type="text"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  width="100%"
+                  height="30px"
+                  marginY="10px"
+                ></Box>
               </Box>
             </Box>
 
@@ -233,6 +255,9 @@ const loadUsers=()=>{
               >
                 <Box
                   component="input"
+                  value={size}
+                  type="text"
+                  onChange={(e) => setSize(e.target.value)}
                   width="100%"
                   height="30px"
                   marginY="10px"
@@ -267,6 +292,7 @@ const loadUsers=()=>{
                   color: "white",
                   fontWeight: "bold",
                 }}
+                onClick={Update}
               >
                 ذخیره
               </Button>
@@ -279,7 +305,7 @@ const loadUsers=()=>{
       <Box flex={4} sx={{ width: "90vw" }}>
         <Box className={classes.table}>
           <Box className={classes.trTitle}>
-          <Box>
+            <Box>
               <Typography variant="h6">کد</Typography>
             </Box>
             <Box>
@@ -295,9 +321,9 @@ const loadUsers=()=>{
               <Typography variant="h6"> عملیات </Typography>
             </Box>
           </Box>
-          {product.map((data, index) => (
+          {products.map((data, index) => (
             <Box className={classes.tr} key={index}>
-                   <Box>
+              <Box>
                 <Box component="span" className={classes.name}>
                   {data.id}
                 </Box>
@@ -319,8 +345,8 @@ const loadUsers=()=>{
               </Box>
               <Box>
                 <Box component="span" className={classes.name}>
-                  <Button >ویرایش</Button>
-                  <Button >حذف</Button>
+                  <Button  onClick={() => (Edit(data.id))}> ویرایش </Button>
+                  <Button onClick={() => (deleteHandler(data.id))}>حذف</Button>
                 </Box>
               </Box>
             </Box>
