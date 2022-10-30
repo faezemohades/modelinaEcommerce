@@ -1,14 +1,16 @@
-import {
-  Box,
-  Button,
-  Modal,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Modal, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import {
+ 
+  Grid,
+  Stack,
+  Toolbar,
+ } from "@mui/material";
+ import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
     width: "100px",
@@ -59,9 +61,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Produce() {
+
+
   const classes = useStyles();
   const [open, setOpen] = useState(false);
- 
+
+  const [id, setId] = useState("");
   const [cover, setCover] = useState("");
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
@@ -69,41 +74,48 @@ function Produce() {
   const [size, setSize] = useState("");
   const [material, setMaterial] = useState("");
 
-
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate();
 
   const data = {
+    id: id,
     name: name,
     cover: cover,
     price: price,
     material: material,
-    category:category,
-    size:size
+    category: category,
+    size: size,
   };
-
-  const submit = async(e) => {
-    e.preventDefault();
-   await axios.post("http://localhost:5000/products", data).then(navigate("/"));
-  };
-
-  const loadUsers =async () => {
-   await axios.get("http://localhost:5000/products").then((res) => {
+  const loadUsers = async () => {
+    await axios.get("http://localhost:5000/products").then((res) => {
       setProducts(res.data.reverse());
     });
   };
+  
+    useEffect(() => {
+      loadUsers();
+      
+    }, []);
 
-  const deleteHandler =async (id) => {
-   await axios.delete(`http://localhost:5000/products/${id}`).then(loadUsers());
+  const submitHandler = async () => {
+    if (data.id) {
+      await axios
+        .put(`http://localhost:5000/products/${id}`, data)
+          setOpen(false);
+          loadUsers();
+       
+    } else {
+      await axios.post("http://localhost:5000/products", data);
+      setOpen(false);
+      loadUsers();
+    }
   };
 
-  useEffect(() => {
-    loadUsers();
-  }, []);
 
-  const Edit=(id)=>{
+
+  const editHandler = (id) => {
     axios.get(`http://localhost:5000/products/${id}`).then((res) => {
-      setOpen(true)
+      setOpen(true);
+      setId(res.data.id);
       setName(res.data.name);
       setCover(res.data.cover);
       setPrice(res.data.price);
@@ -111,17 +123,87 @@ function Produce() {
       setSize(res.data.size);
       setCategory(res.data.category);
 
+
     });
-  }
+  };
 
-  const Update=(e,id)=>{
-    e.preventDefault();
-    axios.put(`http://localhost:5000/products/${id}`,data).then (navigate("/admin"))
-  }
+  const deleteHandler = async (id) => {
+    await axios.delete(`http://localhost:5000/products/${id}`);
+    setOpen(false);
+    loadUsers();
+  };
 
-  
   return (
-    <Box marginTop="100px" marginX="10px">
+   <>
+     // navAdmin
+    <Box sx={{ marginTop: "100px", background: "#F3F3F3", minWidth: "30%" }}>
+      <Toolbar width="100%">
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography variant="h5" sx={{ padding: "15px" }}>
+              پنل مدیریت فروشگاه
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            xs={6}
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <Stack direction="row">
+              <Box>
+                <Link to='/admin/produce' style={{  textDecoration: "none",
+        color: "grey"}}>
+                <Button
+                   variant="outlined"
+                  sx={{
+                    padding: "8px 15px",
+                    fontWeight: "bold",
+                    minWidth: "100px",
+                  }}
+                >
+                  کالا ها
+                </Button>
+                </Link>
+              </Box>
+              <Box>
+              <Link to='/admin/inventory' style={{  textDecoration: "none",
+        color: "grey"}}>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    padding: "8px 15px",
+                    fontWeight: "bold",
+                    minWidth: "100px",
+                  }}
+                >
+                  موجودی
+                </Button>
+                </Link>
+              </Box>
+              <Box>
+              <Link to='/admin/orders' style={{  textDecoration: "none",
+        color: "grey"}}>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    padding: "8px 15px",
+                    fontWeight: "bold",
+                    minWidth: "100px",
+                  }}
+                >
+                  سفارش ها
+                </Button>
+                </Link>
+              </Box>
+            </Stack>
+          </Grid>
+        </Grid>
+      </Toolbar>
+    </Box>
+
+   <Box marginTop="100px" marginX="10px">
       {/* top section */}
       <Box
         display="flex"
@@ -151,9 +233,11 @@ function Produce() {
       {/* modal */}
       <Modal open={open} onClose={() => setOpen(false)}>
         <Box className={classes.modal} padding="15px">
-          <Box component="form" onSubmit={submit}>
+          <Box component="form">
             <Box display="flex" justifyContent="space-between">
-              <Typography variant="h6"> افزودن / ویرایش کالا</Typography>
+              <Typography variant="h6">
+                {id ? "ویرایش کالا" : "افزودن کالا"}
+              </Typography>
               <Button onClick={() => setOpen(false)}>
                 <CancelOutlinedIcon />
               </Button>
@@ -184,7 +268,7 @@ function Produce() {
                 >
                   Upload File
                   <input
-                     hidden
+                    hidden
                     value={cover}
                     onChange={(e) => setCover(e.target.value)}
                   />
@@ -282,19 +366,35 @@ function Produce() {
                 ></Box>
               </Box>
             </Box>
+          </Box>
+          <Box display="flex" justifyContent="space-evenly">
             <Box display="flex" justifyContent="center">
               <Button
                 variant="contained"
-                type="submit"
                 sx={{
                   marginY: "10px",
                   padding: "8px 15px",
                   color: "white",
                   fontWeight: "bold",
                 }}
-                onClick={Update}
+                onClick={submitHandler}
               >
-                ذخیره
+                {id ? "ویرایش" : "افزودن"}
+              </Button>
+            </Box>
+            <Box display="flex" justifyContent="center">
+              <Button
+                variant="outlined"
+                type="submit"
+                color="error"
+                sx={{
+                  marginY: "10px",
+                  padding: "8px 15px",
+                  fontWeight: "bold",
+                }}
+                onClick={() => setOpen(false)}
+              >
+                انصراف
               </Button>
             </Box>
           </Box>
@@ -305,9 +405,7 @@ function Produce() {
       <Box flex={4} sx={{ width: "90vw" }}>
         <Box className={classes.table}>
           <Box className={classes.trTitle}>
-            <Box>
-              <Typography variant="h6">کد</Typography>
-            </Box>
+           
             <Box>
               <Typography variant="h6">تصویر</Typography>
             </Box>
@@ -323,11 +421,7 @@ function Produce() {
           </Box>
           {products.map((data, index) => (
             <Box className={classes.tr} key={index}>
-              <Box>
-                <Box component="span" className={classes.name}>
-                  {data.id}
-                </Box>
-              </Box>
+            <Box></Box>
               <Box>
                 <Box className={classes.imgContainer}>
                   <img width="90%" src={data.cover} alt="" />
@@ -345,8 +439,8 @@ function Produce() {
               </Box>
               <Box>
                 <Box component="span" className={classes.name}>
-                  <Button  onClick={() => (Edit(data.id))}> ویرایش </Button>
-                  <Button onClick={() => (deleteHandler(data.id))}>حذف</Button>
+                  <Button onClick={() => editHandler(data.id)}> ویرایش </Button>
+                  <Button onClick={() => deleteHandler(data.id)}>حذف</Button>
                 </Box>
               </Box>
             </Box>
@@ -354,6 +448,7 @@ function Produce() {
         </Box>
       </Box>
     </Box>
+   </>
   );
 }
 
