@@ -1,5 +1,5 @@
 import React from 'react'
-import mod from '../../../assets/modelina.png'
+import mod from '../../../assets/images/modelina.png'
 import { makeStyles } from "@mui/styles";
 import { Box, Typography } from '@mui/material';
 const useStyles = makeStyles((theme) => ({

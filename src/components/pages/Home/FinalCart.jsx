@@ -84,7 +84,7 @@ function FinalCart() {
     };
     userInfo.push(userAddress);
     console.log(userInfo);
-  };
+   };
 
   const copounHandler = (event) => {
     event.preventDefault();
@@ -162,22 +162,7 @@ function FinalCart() {
               onChange={(e) => setEnterAddress(e.target.value)}
             />
           </Box>
-          <Box display="flex" justifyContent="center">
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{
-                fontSize: "18px",
-                padding: "10px",
-                color: "white",
-                height: "auto",
-                fontWeight: "bold",
-                marginTop: "20px",
-              }}
-            >
-              اقدام به پرداخت
-            </Button>
-          </Box>
+         
         </Box>
         <Box flex={2}>
           {/* total box */}
@@ -255,6 +240,22 @@ function FinalCart() {
                 اعمال تخفیف
               </Button>
             </Box>
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                fontSize: "18px",
+                padding: "10px",
+                color: "white",
+                height: "auto",
+                fontWeight: "bold",
+                marginTop: "20px",
+              }}
+            >
+              اقدام به پرداخت
+            </Button>
           </Box>
         </Box>
       </Box>

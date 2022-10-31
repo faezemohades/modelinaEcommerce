@@ -1,6 +1,6 @@
 import { Box } from '@mui/system'
 import React from 'react'
-import image from '../../../assets/BeFunky-collage.jpg'
+import image from '../../../assets/images/BeFunky-collage.jpg'
 function Featured() {
   
   return (

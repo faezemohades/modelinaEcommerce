@@ -1,4 +1,4 @@
-import { Box, Button, Modal, Typography } from "@mui/material";
+import { Box, Button, Modal, TextareaAutosize, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
@@ -73,6 +73,7 @@ function Produce() {
   const [price, setPrice] = useState("");
   const [size, setSize] = useState("");
   const [material, setMaterial] = useState("");
+  const [desc, setDesc] = useState("");
 
   const [products, setProducts] = useState([]);
 
@@ -84,6 +85,7 @@ function Produce() {
     material: material,
     category: category,
     size: size,
+    desc:desc,
   };
   const loadUsers = async () => {
     await axios.get("http://localhost:5000/products").then((res) => {
@@ -122,6 +124,7 @@ function Produce() {
       setMaterial(res.data.material);
       setSize(res.data.size);
       setCategory(res.data.category);
+      setDesc(res.data.desc);
 
 
     });
@@ -135,7 +138,7 @@ function Produce() {
 
   return (
    <>
-     // navAdmin
+     {/* // navAdmin */}
     <Box sx={{ marginTop: "100px", background: "#F3F3F3", minWidth: "30%" }}>
       <Toolbar width="100%">
         <Grid container>
@@ -270,7 +273,7 @@ function Produce() {
                   <input
                     hidden
                     value={cover}
-                    onChange={(e) => setCover(e.target.value)}
+                    onChange={(e) => setCover(e.target.files)}
                   />
                 </Button>
               </Box>
@@ -364,6 +367,17 @@ function Produce() {
                   height="30px"
                   marginY="10px"
                 ></Box>
+              </Box>
+            </Box>
+            <Box>
+              <Typography>توضیحات :</Typography>
+              <Box
+                marginY="10px"
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <TextareaAutosize style={{ width: "100%" }} minRows={5}  onChange={(e) => setDesc(e.target.value)}/>
               </Box>
             </Box>
           </Box>

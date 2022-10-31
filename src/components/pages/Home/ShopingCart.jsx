@@ -62,6 +62,9 @@ function ShopingCart() {
             <Box>
               <Typography variant="h6">قیمت کل</Typography>
             </Box>
+            <Box>
+              <Typography variant="h6">    </Typography>
+            </Box>
           </Box>
 
           {cartProducts.length === 0 ? (

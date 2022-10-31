@@ -40,11 +40,8 @@ function SubmitForm() {
           </Typography>
         </Box>
         <Box
-          component="form"
-          action="https://formsubmit.co/karoje9818@migonom.com"
-          method="POST"
-          target="_blank"
-        >
+        component="form"
+           action="https://formsubmit.co/popon32238@24rumen.com" method="POST" target="_blank">
           <Box
             sx={{
               margin: "0 auto",
@@ -58,8 +55,7 @@ function SubmitForm() {
           >
             <TextField
               placeholder=" نام خانوادگی"
-              required
-              type="text"
+               type="text"
               value={textValue.name}
               onChange={(e) =>
                 setTextValue({
@@ -71,8 +67,7 @@ function SubmitForm() {
               variant="filled"
             />
             <TextField
-              required
-              placeholder="آدرس ایمیل"
+               placeholder="آدرس ایمیل"
               type="email"
               value={textValue.email}
               onChange={(e) =>
@@ -94,8 +89,7 @@ function SubmitForm() {
           >
             <TextField
               sx={{ width: "100%" }}
-              required
-              placeholder=" توضیحات "
+               placeholder=" توضیحات "
               type="text"
               value={textValue.decs}
               onChange={(e) =>
@@ -115,6 +109,7 @@ function SubmitForm() {
               type="submit"
               variant="contained"
               onClick={handleResetValue}
+             sx={{ color:"white",fontWeight:"bold",width:"80px",fontSize:'18px'}}
             >
               ارسال
             </Button>

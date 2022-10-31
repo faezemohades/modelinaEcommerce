@@ -15,7 +15,7 @@ import {
 import {Link} from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 import RedeemIcon from "@mui/icons-material/Redeem";
-import logo from "../../../assets/logooo.png";
+import logo from "../../../assets/images/logooo.png";
 import DrawerComp from "./DrawerComp";
 import {makeStyles} from "@mui/styles";
 import { useState } from 'react';

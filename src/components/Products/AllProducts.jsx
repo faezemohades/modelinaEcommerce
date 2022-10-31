@@ -1,7 +1,6 @@
 import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import SearchBar from "../pages/Home/SearchBar";
-
 import data from "../../data/db.json";
 import { useState } from "react";
 import ProductCard from "./ProductCard";
@@ -47,7 +46,6 @@ function AllProducts() {
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(data.products);
 
-
   useEffect(() => {
     if (category === "All") {
       setAllProducts(data.products);
@@ -68,8 +66,6 @@ function AllProducts() {
 
       setAllProducts(filteredProducts);
     }
-
-    
   }, [category]);
 
   const searchedProduct = allProducts.filter((item) => {
@@ -95,7 +91,9 @@ function AllProducts() {
       <Box className={classes.title}>
         <Typography variant="h4"> فروشگاه</Typography>
       </Box>
-      <Box display="flex">
+      <Box  sx={{ display: "flex", justifyContent: "center", paddingX: "20px" }}
+        flexDirection={{ xs: "column", md: "column", lg: "row" }}
+        alignItems={{ xs: "center", md: "center", lg: "self-start" }}>
         {/* sidebar */}
 
         <Box flex={1} margin="20px">
@@ -119,54 +117,72 @@ function AllProducts() {
               دسته بندی محصولات
             </Typography>
           </Box>
-          <Box sx={{borderBottom:"1px solid grey"}}>
-          <Button href="#text-buttons" style={{color:"grey",fontSize:"18px"}} onClick={() => setCategory("All")}>همه</Button>
+          <Box sx={{ borderBottom: "1px solid grey" }}>
+            <Button
+              href="#text-buttons"
+              style={{ color: "grey", fontSize: "18px" }}
+              onClick={() => setCategory("All")}
+            >
+              همه
+            </Button>
           </Box>
-          <Box sx={{borderBottom:"1px solid grey"}}>
-          <Button href="#text-buttons" style={{color:"grey",fontSize:"18px"}} onClick={() => setCategory("shal")}>شال</Button>
+          <Box sx={{ borderBottom: "1px solid grey" }}>
+            <Button
+              href="#text-buttons"
+              style={{ color: "grey", fontSize: "18px" }}
+              onClick={() => setCategory("shal")}
+            >
+              شال
+            </Button>
           </Box>
-          <Box sx={{borderBottom:"1px solid grey"}}>
-          <Button href="#text-buttons" style={{color:"grey",fontSize:"18px"}} onClick={() => setCategory("scarf")}>روسری</Button>
+          <Box sx={{ borderBottom: "1px solid grey" }}>
+            <Button
+              href="#text-buttons"
+              style={{ color: "grey", fontSize: "18px" }}
+              onClick={() => setCategory("scarf")}
+            >
+              روسری
+            </Button>
           </Box>
-         
         </Box>
 
         {/* feed */}
 
-        <Grid
-          padding="20px"
-          item
-          container
-          spacing={{ xs: 2, md: 2 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          flex={4}
-        >
-          {displayPage?.map((item) => (
-            <Grid item xs={2} sm={4} md={4} key={item.id}>
-              <Item>
-                <ProductCard item={item} />
-              </Item>
-            </Grid>
-          ))}
-        </Grid>
-
-
-        <Grid
-          padding="20px"
-          item
-          container
-          spacing={{ xs: 2, md: 2 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          flex={4}
-        >
-          {allProducts?.map((item) => (
-            <Grid item xs={2} sm={4} md={4} key={item.id}>
-              <Item>
-                <ProductCard item={item} />
-              </Item>
-            </Grid>
-          ))}
-        </Grid>
+        {searchedProduct ? (
+          <Grid
+            padding="20px"
+            item
+            container
+            spacing={{ xs: 2, md: 2 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+            flex={4}
+          >
+            {displayPage.map((item) => (
+              <Grid item xs={2} sm={4} md={4} key={item.id}>
+                <Item>
+                  <ProductCard item={item} />
+                </Item>
+              </Grid>
+            ))}
+          </Grid>
+        ) : (
+          <Grid
+            padding="20px"
+            item
+            container
+            spacing={{ xs: 2, md: 2 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+            flex={4}
+          >
+            {allProducts.map((item) => (
+              <Grid item xs={2} sm={4} md={4} key={item.id}>
+                <Item>
+                  <ProductCard item={item} />
+                </Item>
+              </Grid>
+            ))}
+          </Grid>
+        )}
       </Box>
 
       {/* pagination */}

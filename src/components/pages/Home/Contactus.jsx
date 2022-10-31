@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import contact from "../../../assets/4.jpg";
+import contact from "../../../assets/images/4.jpg";
 import SubmitForm from './SubmitForm';
 
  const useStyles = makeStyles((theme) => ({
