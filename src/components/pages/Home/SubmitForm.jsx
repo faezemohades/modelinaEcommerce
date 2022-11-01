@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "40px",
   },
   title: {
-    color: "gray",
+    
     width: "100%",
     paddingTop: "40px",
     textAlign: "center",
@@ -34,7 +34,7 @@ function SubmitForm() {
           <Typography variant="h4">با ما در تماس باشید</Typography>
         </Box>
         <Box>
-          <Typography variant="h6" paddingY={3} textAlign="center">
+          <Typography variant="h6" paddingY={3} textAlign="center" sx={{color: "gray",}}>
             شما می توانید انتقادات و پیشنهادات خود را از طریق فرم زیر با ما در
             میان بگذارید
           </Typography>

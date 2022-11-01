@@ -25,8 +25,7 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: "5px",
     },
     icons: {
-      margin: "15px",
-      display: "flex",
+       display: "flex",
       justifyContent: "center",
     },
     icon: {
@@ -103,11 +102,10 @@ function Footer() {
         <LocationOnIcon />
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography variant="h6" className={classes.title}>
-            آدرس دفتر مرکزی{" "}
+            آدرس دفتر :
           </Typography>
           <Typography className={classes.text}>
-            : خیابان پامنار-ابتداى کوی حق پرست-نبش بن بست بنی هاشمی- ساختمان
-            ادارى سبحان -طبقه ٢ واحد ١٠
+             خیابان پامنار-ابتداى کوی حق پرست-نبشبنی هاشمی 
           </Typography>
         </Box>
       </Box>

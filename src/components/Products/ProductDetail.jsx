@@ -33,9 +33,8 @@ const useStyles = makeStyles((theme) => ({
   },
   tabcontent: {
     padding: "30px",
-    "& p": {
+    "& Typography": {
       color: theme.palette.common.grey,
-      lineHeight: "30px",
     },
   },
 
@@ -149,7 +148,7 @@ function ProductDetail() {
                 variant="h6"
                  onClick={() => setTab("desc")}
               >
-                توضیخات
+                توضیحات
               </Typography>
             </Box>
             <Box className={classes.tabs}>
@@ -161,7 +160,7 @@ function ProductDetail() {
 
           {tab === "desc" ? (
             <Box component="div" className={classes.tabcontent}>
-              <Box component="p">{desc}</Box>
+              <Typography>{desc}</Typography>
             </Box>
           ) : (
             <Box component="div" marginY="60px">
@@ -279,7 +278,7 @@ function ProductDetail() {
       </Box>
 
       {/* related product */}
-      <Box marginTop="150px" margin="auto">
+      <Box marginTop="150px" margin="auto" width="90%">
         <Box margin="50px 0px" textAlign="center" className={classes.text}>
           <Typography variant="h4">محصولات مرتبط</Typography>
         </Box>
@@ -294,7 +293,7 @@ function ProductDetail() {
             flex={4}
           >
             {relatedProduct.slice(1, 5).map((item) => (
-              <Grid item xs={2} sm={4} md={2} key={item.id}>
+              <Grid item xs={2} sm={4} md={3} key={item.id}>
                 <ProductCard item={item} />
               </Grid>
             ))}

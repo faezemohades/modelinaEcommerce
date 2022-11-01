@@ -67,7 +67,7 @@ function Produce() {
   const [open, setOpen] = useState(false);
 
   const [id, setId] = useState("");
-  const [cover, setCover] = useState("");
+  const [cover, setCover] = useState(false);
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
@@ -109,9 +109,19 @@ function Produce() {
       await axios.post("http://localhost:5000/products", data);
       setOpen(false);
       loadUsers();
+      console.log(cover)
+
     }
   };
 
+  const Upload= (e)=>{
+    e.preventDefault()
+    const formData = new FormData();
+    formData.append("cover", cover);
+      axios.post("http://localhost:5000/products", formData).then((res)=>{
+        console.log(res)
+      });
+    }
 
 
   const editHandler = (id) => {
@@ -125,7 +135,6 @@ function Produce() {
       setSize(res.data.size);
       setCategory(res.data.category);
       setDesc(res.data.desc);
-
 
     });
   };
@@ -236,7 +245,6 @@ function Produce() {
       {/* modal */}
       <Modal open={open} onClose={() => setOpen(false)}>
         <Box className={classes.modal} padding="15px">
-          <Box component="form">
             <Box display="flex" justifyContent="space-between">
               <Typography variant="h6">
                 {id ? "ویرایش کالا" : "افزودن کالا"}
@@ -245,7 +253,7 @@ function Produce() {
                 <CancelOutlinedIcon />
               </Button>
             </Box>
-            <Box>
+            <Box component="form" onSubmit={Upload}>
               <Typography>تصویر کالا :</Typography>
               <Box
                 display="flex"
@@ -254,30 +262,23 @@ function Produce() {
               >
                 <Box
                   component="input"
+                  type="file"
                   width="75%"
                   height="30px"
                   marginY="10px"
+                  onChange={(e) => setCover(e.target.files[0])}
                 ></Box>
-                <Button
-                  sx={{
-                    padding: "5px",
-                    height: "20%",
-                    width: "20%",
-                    minWidth: "100px",
-                    marginRight: "5px",
-                  }}
-                  variant="contained"
-                  component="label"
-                >
-                  Upload File
-                  <input
-                    hidden
-                    value={cover}
-                    onChange={(e) => setCover(e.target.files)}
-                  />
-                </Button>
+           <Box
+                  component="input"
+                  type="submit"
+                  width="75%"
+                  height="30px"
+                  marginY="10px"
+                  
+                ></Box>
               </Box>
             </Box>
+          <Box component="form">
             <Box>
               <Typography>نام کالا :</Typography>
               <Box
@@ -453,8 +454,8 @@ function Produce() {
               </Box>
               <Box>
                 <Box component="span" className={classes.name}>
-                  <Button onClick={() => editHandler(data.id)}> ویرایش </Button>
-                  <Button onClick={() => deleteHandler(data.id)}>حذف</Button>
+                  <Button sx={{fontSize:"18px"}} onClick={() => editHandler(data.id)}> ویرایش </Button>
+                  <Button  sx={{fontSize:"18px"}} onClick={() => deleteHandler(data.id)}>حذف</Button>
                 </Box>
               </Box>
             </Box>

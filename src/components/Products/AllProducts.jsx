@@ -69,8 +69,8 @@ function AllProducts() {
   }, [category]);
 
   const searchedProduct = allProducts.filter((item) => {
-    if (searchTerm.value === "") return item;
-    if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) return item;
+    if (searchTerm.value === "" || {}) return item;
+    if (item.name.includes(searchTerm)) return item;
   });
 
   const productPerPage = 12;

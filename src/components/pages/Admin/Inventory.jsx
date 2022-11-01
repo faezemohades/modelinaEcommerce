@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   imgContainer: {
     width: "100px",
-    height: " 100px",
+    height: " 200px",
     position: "relative",
   },
 
@@ -308,7 +308,9 @@ function Inventory() {
                 <Box>
                   <Box className={classes.imgContainer}>
                     <img width="90%" src={data.cover} alt="" />
-                    <Typography> {data.name}</Typography>
+                   <Box marginY="10px">
+                   <Typography variant="subtitle1"> {data.name}</Typography>
+                   </Box>
                   </Box>
                 </Box>
                 <Box>
@@ -324,9 +326,8 @@ function Inventory() {
                 </Box>
                 <Box>
                   <Box component="span" className={classes.name}>
-                    <Button onClick={() => editHandler(data.id)}>
-                      {" "}
-                      ویرایش{" "}
+                    <Button sx={{fontSize:"18px"}} onClick={() => editHandler(data.id)}>
+                      ویرایش
                     </Button>
                   </Box>
                 </Box>
