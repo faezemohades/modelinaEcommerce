@@ -12,12 +12,12 @@ const useStyles = makeStyles((theme) => ({
    },
   btn: {
     position: "absolute",
-    width: "150px",
+    width: "180px",
     height: "49px",
     background: "#0A0000",
     right: "30%",
     bottom: "40%",
-  
+   
   },
 }));
 
@@ -37,7 +37,7 @@ function ProductItems() {
        <Button
           variant="contained"
           className={classes.btn}
-          sx={{ color: "#F8F8F8",  fontSize: "20px",
+          sx={{ color: "#F8F8F8",  fontSize: "18px",
           fontWeight: "bold" }}
         >
             محصولات بیشتر

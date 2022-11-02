@@ -41,6 +41,7 @@ import SubmitForm from './SubmitForm';
 
 function Contactus() {
   const classes = useStyles();
+  window.scrollTo(0, 0);
 
   return (
     <Box >

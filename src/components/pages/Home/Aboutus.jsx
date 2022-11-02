@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Aboutus() {
 const classes = useStyles();
+window.scrollTo(0, 0);
 
   return (
     <Box>

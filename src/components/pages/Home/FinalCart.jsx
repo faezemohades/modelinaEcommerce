@@ -61,6 +61,8 @@ import { useSelector } from "react-redux";
   },
 }));
 function FinalCart() {
+  window.scrollTo(0, 0);
+
   const classes = useStyles();
   const [enterName, setEnterName] = useState("");
   const [enterFamily, setEnterFamily] = useState("");

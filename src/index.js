@@ -18,7 +18,6 @@ root.render(
         <ToastContainer
           position="top-center"
           autoClose={3000}
-    
           closeOnClick
           rtl={false}
           pauseOnFocusLoss

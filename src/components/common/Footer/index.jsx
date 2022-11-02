@@ -27,15 +27,17 @@ const useStyles = makeStyles((theme) => ({
     icons: {
        display: "flex",
       justifyContent: "center",
-    },
+     },
     icon: {
-      cursor: "pointer",
+      display: "flex",
+      justifyContent: "center",
+       cursor: "pointer",
       margin: "10px",
       padding: "10px",
       border: "1px dashed gray",
       borderRadius: "50%",
       backgroundColor: "white",
-    },
+     },
     boxes: {
       width: "80%",
       padding: "50px",

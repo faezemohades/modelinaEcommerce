@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   name: {
     fontWeight: "500",
     fontSize: "18px",
-  },
+   },
 
   modal: {
     position: "absolute",
@@ -113,16 +113,7 @@ function Produce() {
 
     }
   };
-
-  const Upload= (e)=>{
-    e.preventDefault()
-    const formData = new FormData();
-    formData.append("cover", cover);
-      axios.post("http://localhost:5000/products", formData).then((res)=>{
-        console.log(res)
-      });
-    }
-
+ 
 
   const editHandler = (id) => {
     axios.get(`http://localhost:5000/products/${id}`).then((res) => {
@@ -253,31 +244,7 @@ function Produce() {
                 <CancelOutlinedIcon />
               </Button>
             </Box>
-            <Box component="form" onSubmit={Upload}>
-              <Typography>تصویر کالا :</Typography>
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-              >
-                <Box
-                  component="input"
-                  type="file"
-                  width="75%"
-                  height="30px"
-                  marginY="10px"
-                  onChange={(e) => setCover(e.target.files[0])}
-                ></Box>
-           <Box
-                  component="input"
-                  type="submit"
-                  width="75%"
-                  height="30px"
-                  marginY="10px"
-                  
-                ></Box>
-              </Box>
-            </Box>
+         
           <Box component="form">
             <Box>
               <Typography>نام کالا :</Typography>
@@ -378,7 +345,7 @@ function Produce() {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <TextareaAutosize style={{ width: "100%" }} minRows={5}  onChange={(e) => setDesc(e.target.value)}/>
+                <TextareaAutosize style={{ width: "100%" }} minRows={5}  onChange={(e) => setDesc(e.target.value)} value={desc}/>
               </Box>
             </Box>
           </Box>
@@ -420,11 +387,7 @@ function Produce() {
       <Box flex={4} sx={{ width: "90vw" }}>
         <Box className={classes.table}>
           <Box className={classes.trTitle}>
-           
-            <Box>
-              <Typography variant="h6">تصویر</Typography>
-            </Box>
-            <Box>
+              <Box>
               <Typography variant="h6">نام کالا</Typography>
             </Box>
             <Box>
@@ -436,12 +399,6 @@ function Produce() {
           </Box>
           {products.map((data, index) => (
             <Box className={classes.tr} key={index}>
-            <Box></Box>
-              <Box>
-                <Box className={classes.imgContainer}>
-                  <img width="90%" src={data.cover} alt="" />
-                </Box>
-              </Box>
               <Box>
                 <Box component="span" className={classes.name}>
                   {data.name}

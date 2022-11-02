@@ -1,7 +1,6 @@
 import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import SearchBar from "../pages/Home/SearchBar";
-import data from "../../data/db.json";
+ import data from "../../data/db.json";
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 import { styled } from "@mui/material/styles";
@@ -60,6 +59,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function AllProducts() {
+  window.scrollTo(0, 0);
+
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
@@ -110,12 +111,7 @@ function AllProducts() {
     setPageNumber(selected);
   };
 
-  const handleSearch =(e)=>{
-const searchTerm=e.target.value;
-const searchedProducts=allProducts.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase()))
-setAllProducts(searchedProducts)
-  }
-
+ 
   return (
     <Box marginTop="200px" width="90vw">
       <Box className={classes.title}>

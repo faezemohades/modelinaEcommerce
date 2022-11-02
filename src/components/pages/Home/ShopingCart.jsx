@@ -34,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ShopingCart() {
+  window.scrollTo(0, 0);
+
   const classes = useStyles();
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
