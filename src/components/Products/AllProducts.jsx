@@ -8,6 +8,8 @@ import { styled } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
 import "../../styles/pagination.css";
 import { makeStyles } from "@mui/styles";
+import SearchIcon from "@mui/icons-material/Search";
+import { IconButton, InputBase } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -28,6 +30,24 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "10px",
     marginRight: "20px",
     marginBottom: "10px",
+  },
+
+  search: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+  },
+  searchBox: {
+    border: "0.5px solid #CCCCCC",
+    padding: "5px",
+    borderRadius: "3px",
+    width: "80%",
+  },
+  searchBtn: {
+    border: "0.5px solid #CCCCCC",
+    backgroundColor: "#F0F0F0",
+    borderRadius: "3px",
   },
 }));
 
@@ -68,9 +88,13 @@ function AllProducts() {
     }
   }, [category]);
 
-  const searchedProduct = allProducts.filter((item) => {
-    if (searchTerm.value === "" || {}) return item;
-    if (item.name.includes(searchTerm)) return item;
+ const searchedProduct = allProducts.filter((item) => {
+    if (searchTerm.value === "") {
+      return item;
+    }
+    if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return item;
+    }  
   });
 
   const productPerPage = 12;
@@ -86,6 +110,12 @@ function AllProducts() {
     setPageNumber(selected);
   };
 
+  const handleSearch =(e)=>{
+const searchTerm=e.target.value;
+const searchedProducts=allProducts.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+setAllProducts(searchedProducts)
+  }
+
   return (
     <Box marginTop="200px" width="90vw">
       <Box className={classes.title}>
@@ -98,11 +128,23 @@ function AllProducts() {
 
         <Box flex={1} margin="20px">
           <Box sx={{ width: "100%" }}>
-            <SearchBar
-              sx={{ width: "100%" }}
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-            />
+          
+
+          <Box  className={classes.search} >
+      <Box className={classes.searchBox}>
+        <InputBase
+            placeholder="جستجوی محصول"
+            required
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+        ></InputBase>
+      </Box>
+      <Box className={classes.searchBtn}>
+        <IconButton  >
+          <SearchIcon color="#F0F0F0" />
+        </IconButton>
+      </Box>
+    </Box>
           </Box>
 
           {/* category */}
