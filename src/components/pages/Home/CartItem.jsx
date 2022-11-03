@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-evenly",
       alignItems: "center",
       marginTop: "20px",
+
       borderBottom: "2px solid #E2E2E2",
       paddingBottom: "20px",
      },
@@ -66,8 +67,9 @@ function CartItem({item}) {
 }
   return (
     
-        <Box className={classes.tr}  >
-          <Box>
+        <Box className={classes.tr}   flexDirection={{ xs: "column", md: "row", lg: "row" }} >
+          <Box  marginBottom= "30px"
+>
             <Box className={classes.imgContainer}>
               <img
                 width="90%"
@@ -76,18 +78,19 @@ function CartItem({item}) {
               />
             </Box>
           </Box>
-          <Box>
+          <Box marginBottom= "20px">
             <Box component="span" className={classes.name}>
             {`${price} تومان`}
             </Box>
           </Box>
-          <Box>
+          <Box  marginBottom={{ xs: "20px", md: "20px" }}>
             <Box component="span">
               <Box display="flex" marginLeft="20px" width="30px">
                    <AddIcon onClick={incrementItem}/>
                  <Box
                  
                   component="div"
+                  marginBottom= "20px"
                 >
                   <Typography padding="5px">{quantity}</Typography>
                 </Box>
@@ -95,7 +98,7 @@ function CartItem({item}) {
                </Box>
             </Box>
           </Box>
-          <Box>
+          <Box marginBottom= "20px">
             <Box component="span" className={classes.name}>
              {`${totalPrice} تومان`}
             </Box>

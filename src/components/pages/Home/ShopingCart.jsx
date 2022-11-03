@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "80px",
-    padding: "50px",
     display: "flex",
    },
 
@@ -20,8 +19,7 @@ const useStyles = makeStyles((theme) => ({
   trTitle: {
     display: "flex",
     justifyContent: "space-evenly",
-    borderBottom: "2px solid #E2E2E2",
-    margin: "5px",
+     margin: "5px",
     paddingBottom: "20px",
   },
 
@@ -47,8 +45,8 @@ function ShopingCart() {
     >
       {/* table product */}
       <Box flex={4} >
-        <Box className={classes.table}   >
-          <Box className={classes.trTitle} >
+        <Box className={classes.table} display={{ xs: "flex", md: "block", lg: "block" }}  >
+          <Box className={classes.trTitle} flexDirection={{ xs: "column", md: "row", lg: "row" }}>
             <Box>
               <Typography variant="h6">محصول</Typography>
             </Box>

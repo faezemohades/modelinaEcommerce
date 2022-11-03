@@ -103,7 +103,8 @@ function FinalCart() {
       <Box marginRight="20px">
         <Typography variant="h5"> نهایی کردن خرید </Typography>
       </Box>
-      <Box marginBottom="40px"   display="flex"  sx={{ display: "flex", justifyContent: "center", paddingX: "20px" }}
+      <Box marginBottom="40px"  
+       display="flex"  sx={{ display: "flex", justifyContent: "center", paddingX: "20px" }}
         flexDirection={{ xs: "column", md: "column", lg: "row" }}
         alignItems={{ xs: "center", md: "center", lg: "self-start" }}>
         {/* form */}
