@@ -5,7 +5,6 @@ import Produce from "./Produce";
 function Admin() {
   return (
     <Box height="auto">
- 
       <Produce />
     </Box>
   );

@@ -21,8 +21,7 @@ const useStyles = makeStyles((theme) => ({
   table: {
     width: "80vw",
     marginBottom: "20px",
-    margin: "auto",
-    minWidth: "60%",
+    margin: "auto"
   },
   trTitle: {
     display: "flex",
@@ -38,8 +37,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: "20px",
     borderBottom: "2px solid #E2E2E2",
-    paddingBottom: "20px",
-    minWidth: "60%",
+    paddingBottom: "20px"
   },
   name: {
     fontWeight: "500",
@@ -56,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
     border: "2px solid #B5B5B5",
     boxShadow: "24",
-    minWidth: "400px",
+    minWidth: "320px",
   },
 }));
 
@@ -139,17 +137,17 @@ function Produce() {
   return (
    <>
      {/* // navAdmin */}
-    <Box sx={{ marginTop: "100px", background: "#F3F3F3", minWidth: "30%" }}>
-      <Toolbar width="100%">
+    <Box sx={{ marginTop: "65px", background: "#F3F3F3" }}>
+      <Toolbar >
         <Grid container>
-          <Grid item xs={6}>
-            <Typography variant="h5" sx={{ padding: "15px" }}>
+          <Grid item xs={6} >
+            <Typography variant="h5" sx={{ padding: "30px 10px" }}>
               پنل مدیریت فروشگاه
             </Typography>
-          </Grid>
           <Grid
             item
             xs={6}
+            
             display="flex"
             alignItems="center"
             justifyContent="space-between"
@@ -159,14 +157,12 @@ function Produce() {
                 <Link to='/admin/produce' style={{  textDecoration: "none",
         color: "grey"}}>
                 <Button
-                   variant="outlined"
+                   variant="text"
                   sx={{
-                    padding: "8px 15px",
                     fontWeight: "bold",
-                    minWidth: "100px",
                   }}
                 >
-                  کالا ها
+                  کالا
                 </Button>
                 </Link>
               </Box>
@@ -174,11 +170,9 @@ function Produce() {
               <Link to='/admin/inventory' style={{  textDecoration: "none",
         color: "grey"}}>
                 <Button
-                  variant="outlined"
+                  variant="text"
                   sx={{
-                    padding: "8px 15px",
                     fontWeight: "bold",
-                    minWidth: "100px",
                   }}
                 >
                   موجودی
@@ -189,18 +183,17 @@ function Produce() {
               <Link to='/admin/orders' style={{  textDecoration: "none",
         color: "grey"}}>
                 <Button
-                  variant="outlined"
+                  variant="text"
                   sx={{
-                    padding: "8px 15px",
                     fontWeight: "bold",
-                    minWidth: "100px",
                   }}
                 >
-                  سفارش ها
+                  سفارش  
                 </Button>
                 </Link>
               </Box>
             </Stack>
+          </Grid>
           </Grid>
         </Grid>
       </Toolbar>

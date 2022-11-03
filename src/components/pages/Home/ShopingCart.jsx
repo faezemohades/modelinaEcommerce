@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: "80px",
+    marginTop: "200px",
     display: "flex",
    },
 
@@ -64,6 +64,7 @@ function ShopingCart() {
             </Box>
           </Box>
 
+        </Box>
           {cartProducts.length === 0 ? (
             <Typography variant="h6" textAlign="center">
               سبد خرید شما خالیه!
@@ -73,7 +74,6 @@ function ShopingCart() {
               <CartItem item={item} key={index} />
             ))
           )}
-        </Box>
 
         <Box   marginTop="80px">
           <Box display="flex" alignItems="center" marginRight="20px">
