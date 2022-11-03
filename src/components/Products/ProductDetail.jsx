@@ -83,7 +83,7 @@ function ProductDetail() {
         flexDirection={{ xs: "column", md: "column", lg: "row" }}
         alignItems={{ xs: "center", md: "center", lg: "self-start" }}
       >
-        <Box width="500px">
+        <Box  sx={{ width: { xs: "70vw", md: "400px",lg:"500px" } }}>
           <img width="100%" src={cover} alt="" />
         </Box>
         <Box padding="20px" marginTop="50px">
@@ -169,6 +169,9 @@ function ProductDetail() {
                 action="https://formsubmit.co/popon32238@24rumen.com"
                 method="POST"
                 target="_blank"
+                 sx={{ display: "flex", justifyContent: "center", paddingX: "20px" }}
+      flexDirection={{ xs: "column", md: "column", lg: "row" }}
+      alignItems={{ xs: "center", md: "center", lg: "self-start" }}
               >
                 <Box
                   sx={{
@@ -180,6 +183,8 @@ function ProductDetail() {
                     },
                     justifyContent: "center",
                   }}
+                  flexDirection={{ xs: "column", md: "column"  }}
+                  alignItems={{ xs: "center", md: "center", lg: "self-start" }}
                 >
                   <TextField
                     placeholder=" نام خانوادگی"
@@ -232,6 +237,7 @@ function ProductDetail() {
                     rows={4}
                   />
                 </Box>
+              </Box>
                 <Box display="flex" justifyContent="center" marginTop="20px">
                   <Button
                     type="submit"
@@ -247,16 +253,17 @@ function ProductDetail() {
                     ارسال
                   </Button>
                 </Box>
-              </Box>
             </Box>
           )}
         </Box>
       </Box>
       {/* sending detail */}
 
-      <Box display="flex" justifyContent="center" marginY="100px">
+      <Box sx={{ display: "flex", justifyContent: "center", paddingX: "20px" }}
+        flexDirection={{ xs: "column", md: "row",sm:"row", lg: "row" }}
+        alignItems={{ xs: "center", md: "center", lg: "self-start" }} marginY="100px">
         <Box
-          sx={{ border: "2px solid #DEDEDE", width: "250px", marginX: "10px" }}
+          sx={{ border: "2px solid #DEDEDE", width: "250px", margin: "10px" }}
         >
           <Box display="flex" justifyContent="space-around" paddingTop="10px">
             <LocalShippingOutlinedIcon fontSize="large" />

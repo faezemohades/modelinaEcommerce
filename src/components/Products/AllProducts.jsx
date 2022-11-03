@@ -192,7 +192,7 @@ function AllProducts() {
             item
             container
             spacing={{ xs: 2, md: 2 }}
-            columns={{ xs: 4, sm: 8, md: 12 }}
+            columns={{ xs: 2, sm: 8, md: 12 }}
             flex={4}
           >
             {displayPage.map((item) => (
@@ -224,13 +224,14 @@ function AllProducts() {
       </Box>
 
       {/* pagination */}
-      <Box>
+      <Box   >
         <ReactPaginate
           pageCount={pageCount}
           onPageChange={changePage}
           previousLabel={"<"}
           nextLabel={">"}
           containerClassName=" paginationBttns "
+          sx={{ width: { xs: '50px', sm: 'block' } }}
         />
       </Box>
     </Box>

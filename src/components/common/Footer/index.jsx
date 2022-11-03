@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       backgroundColor: "#F8F8F8",
       marginTop: "150px",
+      
     },
     title: {
       paddingRight: "10px",
@@ -59,10 +60,11 @@ function Footer() {
     sx={{
       flexWrap: { xs: "wrap", sm: "wrap", md: "wrap", lg: "nowrap" },
       flexDirection: { xs: "column", sm: "column", md: "column", lg: "row" },
+       
     }}
   >
     {/* about  */}
-    <Box className={classes.boxes}>
+    <Box className={classes.boxes}  >
       <Typography variant="h5" className={classes.title} marginY="10px">
         درباره ما
       </Typography>

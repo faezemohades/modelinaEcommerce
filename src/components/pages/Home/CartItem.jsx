@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "20px",
       borderBottom: "2px solid #E2E2E2",
       paddingBottom: "20px",
-      minWidth: "60%",
-    },
+     },
     name: {
       fontWeight: "500",
       fontSize: "18px",
@@ -67,7 +66,7 @@ function CartItem({item}) {
 }
   return (
     
-        <Box className={classes.tr}>
+        <Box className={classes.tr}  >
           <Box>
             <Box className={classes.imgContainer}>
               <img
@@ -85,22 +84,15 @@ function CartItem({item}) {
           <Box>
             <Box component="span">
               <Box display="flex" marginLeft="20px" width="30px">
-                <Box className={classes.count} >
-                  <AddIcon onClick={incrementItem}/>
-                </Box>
-                <Box
-                  sx={{
-                    border: "1px solid grey",
-                    width: "20px",
-                  }}
+                   <AddIcon onClick={incrementItem}/>
+                 <Box
+                 
                   component="div"
                 >
                   <Typography padding="5px">{quantity}</Typography>
                 </Box>
-                <Box className={classes.count}>
-                  <RemoveIcon onClick={decrementItem}/>
-                </Box>
-              </Box>
+                   <RemoveIcon onClick={decrementItem}/>
+               </Box>
             </Box>
           </Box>
           <Box>

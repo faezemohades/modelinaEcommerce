@@ -46,18 +46,7 @@ function Header() {
   <>
     <DrawerComp />
 
-    {/* logo */}
-    <Link to="/" style={{ position: "absolute", left: "40%", top: "2%"}}>
-      <img
-        src={logo}
-        alt="logo"
-        title=" Home"
-        width="120px"
-        height="50px"
-        margin="5px"
-        borderradius="50%"
-      />
-    </Link>
+  
 
     {/* leftbar */}
     <Stack
@@ -81,7 +70,7 @@ function Header() {
 ) : (
   <Grid container>
     {/* logo */}
-    <Grid item xs={4}>
+    <Grid item xs={4} >
       <Link to="/" style={{ display: "flex", alignItems: "flex-end" }}>
         <img
           src={logo}

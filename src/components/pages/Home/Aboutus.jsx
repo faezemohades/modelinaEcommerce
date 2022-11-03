@@ -6,7 +6,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: "gray",
     backgroundColor: "#FBFBFB",
-    paddingTop: "20px",
+    paddingTop : "30px",
+    paddingBottom : "20px",
+
     textAlign: "center",
     marginTop: "70px",
     width: "100%",

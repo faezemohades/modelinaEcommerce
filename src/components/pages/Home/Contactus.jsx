@@ -11,8 +11,9 @@ import SubmitForm from './SubmitForm';
   title: {
     color: "gray",
     backgroundColor: "#FBFBFB",
-    padding : "20px 0",
-    textAlign: "center",
+    paddingTop : "30px",
+    paddingBottom : "20px",
+        textAlign: "center",
     marginTop: "70px",
     width: "100%",
   },
@@ -20,6 +21,7 @@ import SubmitForm from './SubmitForm';
     display:"flex",
     justifyContent:"center",
     paddingTop:"50px",
+    paddingRight:"20px"
   },
   text: {
     color: "gray",
@@ -50,9 +52,9 @@ function Contactus() {
           تماس با ما
         </Typography>
       </Box>
-      <Box className={classes.head}>
+      <Box className={classes.head} >
        <Box>
-       <Typography variant="h5" paddingY={2}>دفتر مرکزی</Typography>
+       <Typography variant="h5" paddingY={2}    >دفتر مرکزی</Typography>
         <Typography variant="subtitle1">
           خیابان پامنار- کوچه حق پرست- بن بست بنی هاشمی- مجتمع تجاری سبحان- پلاک
           2- طبقه -2 واحد 10 | کد پستی : 1116735530

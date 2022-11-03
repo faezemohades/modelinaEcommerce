@@ -4,11 +4,12 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    height: "40vh",
+    height: "auto",
     width: "100%",
     display: "flex",
     justifyContent: "center",
     marginTop: "40px",
+ 
   },
   title: {
     
@@ -30,8 +31,8 @@ function SubmitForm() {
   return (
     <Box className={classes.container}>
       <Box>
-        <Box className={classes.title}>
-          <Typography variant="h4">با ما در تماس باشید</Typography>
+        <Box className={classes.title} >
+          <Typography variant="h5">با ما در تماس باشید</Typography>
         </Box>
         <Box>
           <Typography variant="h6" paddingY={3} textAlign="center" sx={{color: "gray",}}>
@@ -104,7 +105,7 @@ function SubmitForm() {
               rows={4}
             />
           </Box>
-          <Box display="flex" justifyContent="center" marginTop="20px">
+          <Box display="flex" justifyContent="center" marginY="20px">
             <Button
               type="submit"
               variant="contained"
